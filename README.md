@@ -3,7 +3,12 @@ Clone repository
 
 `git clone https://gitlab.com/schooly-store/schooly-store.git`
 
-Duplicate File `.env.example` di Folder Utama dan ubah menjadi `.env` <br>
+Masuk ke folder yang baru dibuat (seharusnya namanya `schooly-store`) 
+
+`cd schooly-store`
+
+
+Duplicate File `.env.example` di Folder `schooly-store` dan ubah menjadi `.env` <br>
 Kemudian Isi atau Edit File `.env` dengan Database Credential yang diperlukan
 
 `APP_URL=http://schooly-store.test`
