@@ -35,7 +35,7 @@ Link the Public Storage
 `php artisan storage:link`
 
 
-Login Credentials for schooly-store<br>
+# Login Credentials for schooly-store<br>
 
 ## Admin
 email       : admin@schooly.com<br>
