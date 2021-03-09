@@ -219,133 +219,13 @@ class PermissionsTableSeeder extends Seeder
             ),
             25 => 
             array (
-                'id' => 26,
-                'key' => 'browse_categories',
-                'table_name' => 'categories',
-                'created_at' => '2021-03-06 11:29:49',
-                'updated_at' => '2021-03-06 11:29:49',
-            ),
-            26 => 
-            array (
-                'id' => 27,
-                'key' => 'read_categories',
-                'table_name' => 'categories',
-                'created_at' => '2021-03-06 11:29:50',
-                'updated_at' => '2021-03-06 11:29:50',
-            ),
-            27 => 
-            array (
-                'id' => 28,
-                'key' => 'edit_categories',
-                'table_name' => 'categories',
-                'created_at' => '2021-03-06 11:29:50',
-                'updated_at' => '2021-03-06 11:29:50',
-            ),
-            28 => 
-            array (
-                'id' => 29,
-                'key' => 'add_categories',
-                'table_name' => 'categories',
-                'created_at' => '2021-03-06 11:29:50',
-                'updated_at' => '2021-03-06 11:29:50',
-            ),
-            29 => 
-            array (
-                'id' => 30,
-                'key' => 'delete_categories',
-                'table_name' => 'categories',
-                'created_at' => '2021-03-06 11:29:50',
-                'updated_at' => '2021-03-06 11:29:50',
-            ),
-            30 => 
-            array (
-                'id' => 31,
-                'key' => 'browse_posts',
-                'table_name' => 'posts',
-                'created_at' => '2021-03-06 11:29:50',
-                'updated_at' => '2021-03-06 11:29:50',
-            ),
-            31 => 
-            array (
-                'id' => 32,
-                'key' => 'read_posts',
-                'table_name' => 'posts',
-                'created_at' => '2021-03-06 11:29:50',
-                'updated_at' => '2021-03-06 11:29:50',
-            ),
-            32 => 
-            array (
-                'id' => 33,
-                'key' => 'edit_posts',
-                'table_name' => 'posts',
-                'created_at' => '2021-03-06 11:29:50',
-                'updated_at' => '2021-03-06 11:29:50',
-            ),
-            33 => 
-            array (
-                'id' => 34,
-                'key' => 'add_posts',
-                'table_name' => 'posts',
-                'created_at' => '2021-03-06 11:29:50',
-                'updated_at' => '2021-03-06 11:29:50',
-            ),
-            34 => 
-            array (
-                'id' => 35,
-                'key' => 'delete_posts',
-                'table_name' => 'posts',
-                'created_at' => '2021-03-06 11:29:50',
-                'updated_at' => '2021-03-06 11:29:50',
-            ),
-            35 => 
-            array (
-                'id' => 36,
-                'key' => 'browse_pages',
-                'table_name' => 'pages',
-                'created_at' => '2021-03-06 11:29:50',
-                'updated_at' => '2021-03-06 11:29:50',
-            ),
-            36 => 
-            array (
-                'id' => 37,
-                'key' => 'read_pages',
-                'table_name' => 'pages',
-                'created_at' => '2021-03-06 11:29:50',
-                'updated_at' => '2021-03-06 11:29:50',
-            ),
-            37 => 
-            array (
-                'id' => 38,
-                'key' => 'edit_pages',
-                'table_name' => 'pages',
-                'created_at' => '2021-03-06 11:29:50',
-                'updated_at' => '2021-03-06 11:29:50',
-            ),
-            38 => 
-            array (
-                'id' => 39,
-                'key' => 'add_pages',
-                'table_name' => 'pages',
-                'created_at' => '2021-03-06 11:29:50',
-                'updated_at' => '2021-03-06 11:29:50',
-            ),
-            39 => 
-            array (
-                'id' => 40,
-                'key' => 'delete_pages',
-                'table_name' => 'pages',
-                'created_at' => '2021-03-06 11:29:50',
-                'updated_at' => '2021-03-06 11:29:50',
-            ),
-            40 => 
-            array (
                 'id' => 41,
                 'key' => 'browse_hooks',
                 'table_name' => NULL,
                 'created_at' => '2021-03-06 11:29:50',
                 'updated_at' => '2021-03-06 11:29:50',
             ),
-            41 => 
+            26 => 
             array (
                 'id' => 42,
                 'key' => 'browse_orders',
@@ -353,7 +233,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2021-03-06 11:44:27',
                 'updated_at' => '2021-03-06 11:44:27',
             ),
-            42 => 
+            27 => 
             array (
                 'id' => 43,
                 'key' => 'read_orders',
@@ -361,7 +241,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2021-03-06 11:44:27',
                 'updated_at' => '2021-03-06 11:44:27',
             ),
-            43 => 
+            28 => 
             array (
                 'id' => 44,
                 'key' => 'edit_orders',
@@ -369,7 +249,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2021-03-06 11:44:27',
                 'updated_at' => '2021-03-06 11:44:27',
             ),
-            44 => 
+            29 => 
             array (
                 'id' => 45,
                 'key' => 'add_orders',
@@ -377,7 +257,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2021-03-06 11:44:27',
                 'updated_at' => '2021-03-06 11:44:27',
             ),
-            45 => 
+            30 => 
             array (
                 'id' => 46,
                 'key' => 'delete_orders',
@@ -385,7 +265,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2021-03-06 11:44:27',
                 'updated_at' => '2021-03-06 11:44:27',
             ),
-            46 => 
+            31 => 
             array (
                 'id' => 47,
                 'key' => 'browse_shops',
@@ -393,7 +273,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2021-03-07 06:07:25',
                 'updated_at' => '2021-03-07 06:07:25',
             ),
-            47 => 
+            32 => 
             array (
                 'id' => 48,
                 'key' => 'read_shops',
@@ -401,7 +281,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2021-03-07 06:07:25',
                 'updated_at' => '2021-03-07 06:07:25',
             ),
-            48 => 
+            33 => 
             array (
                 'id' => 49,
                 'key' => 'edit_shops',
@@ -409,7 +289,7 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2021-03-07 06:07:25',
                 'updated_at' => '2021-03-07 06:07:25',
             ),
-            49 => 
+            34 => 
             array (
                 'id' => 50,
                 'key' => 'add_shops',
@@ -417,13 +297,53 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2021-03-07 06:07:25',
                 'updated_at' => '2021-03-07 06:07:25',
             ),
-            50 => 
+            35 => 
             array (
                 'id' => 51,
                 'key' => 'delete_shops',
                 'table_name' => 'shops',
                 'created_at' => '2021-03-07 06:07:25',
                 'updated_at' => '2021-03-07 06:07:25',
+            ),
+            36 => 
+            array (
+                'id' => 57,
+                'key' => 'browse_products',
+                'table_name' => 'products',
+                'created_at' => '2021-03-08 13:54:20',
+                'updated_at' => '2021-03-08 13:54:20',
+            ),
+            37 => 
+            array (
+                'id' => 58,
+                'key' => 'read_products',
+                'table_name' => 'products',
+                'created_at' => '2021-03-08 13:54:20',
+                'updated_at' => '2021-03-08 13:54:20',
+            ),
+            38 => 
+            array (
+                'id' => 59,
+                'key' => 'edit_products',
+                'table_name' => 'products',
+                'created_at' => '2021-03-08 13:54:20',
+                'updated_at' => '2021-03-08 13:54:20',
+            ),
+            39 => 
+            array (
+                'id' => 60,
+                'key' => 'add_products',
+                'table_name' => 'products',
+                'created_at' => '2021-03-08 13:54:20',
+                'updated_at' => '2021-03-08 13:54:20',
+            ),
+            40 => 
+            array (
+                'id' => 61,
+                'key' => 'delete_products',
+                'table_name' => 'products',
+                'created_at' => '2021-03-08 13:54:20',
+                'updated_at' => '2021-03-08 13:54:20',
             ),
         ));
         
