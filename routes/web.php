@@ -29,6 +29,13 @@ Route::resource('orders', 'OrderController')->middleware('auth');
 
 Route::resource('shops','ShopController')->middleware('auth');
 
-Route::group(['prefix' => 'admin'], function () {
+// Route::group(['prefix' => 'admin'], function () {
+//     Voyager::routes();
+// });
+
+Route::group(['prefix' => 'seller'], function () {
     Voyager::routes();
+
+    Route::get('/order/delivered/{suborder}', 'SubOrderController@markDelivered')->name('order.delivered');
+    Route::get('/order/canceled/{suborder}', 'SubOrderController@markCanceled')->name('order.canceled');
 });

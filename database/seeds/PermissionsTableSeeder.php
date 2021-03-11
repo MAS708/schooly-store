@@ -345,6 +345,46 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2021-03-08 13:54:20',
                 'updated_at' => '2021-03-08 13:54:20',
             ),
+            41 => 
+            array (
+                'id' => 62,
+                'key' => 'browse_sub_orders',
+                'table_name' => 'sub_orders',
+                'created_at' => '2021-03-10 12:11:47',
+                'updated_at' => '2021-03-10 12:11:47',
+            ),
+            42 => 
+            array (
+                'id' => 63,
+                'key' => 'read_sub_orders',
+                'table_name' => 'sub_orders',
+                'created_at' => '2021-03-10 12:11:47',
+                'updated_at' => '2021-03-10 12:11:47',
+            ),
+            43 => 
+            array (
+                'id' => 64,
+                'key' => 'edit_sub_orders',
+                'table_name' => 'sub_orders',
+                'created_at' => '2021-03-10 12:11:47',
+                'updated_at' => '2021-03-10 12:11:47',
+            ),
+            44 => 
+            array (
+                'id' => 65,
+                'key' => 'add_sub_orders',
+                'table_name' => 'sub_orders',
+                'created_at' => '2021-03-10 12:11:47',
+                'updated_at' => '2021-03-10 12:11:47',
+            ),
+            45 => 
+            array (
+                'id' => 66,
+                'key' => 'delete_sub_orders',
+                'table_name' => 'sub_orders',
+                'created_at' => '2021-03-10 12:11:47',
+                'updated_at' => '2021-03-10 12:11:47',
+            ),
         ));
         
         

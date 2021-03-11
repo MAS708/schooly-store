@@ -84,6 +84,8 @@ class OrderController extends Controller
             $order->items()->attach($item->id, ['price'=> $item->price, 'quantity'=> $item->quantity]);
         }
 
+        $order->generateSubOrders();
+
         \Cart::session(auth()->id())->clear();
         return redirect()->route('home')->withMessage('Order has been placed');
     }

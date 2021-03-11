@@ -105,7 +105,7 @@ class DataTypesTableSeeder extends Seeder
                 'server_side' => 0,
                 'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
                 'created_at' => '2021-03-07 06:07:24',
-                'updated_at' => '2021-03-07 08:43:49',
+                'updated_at' => '2021-03-11 08:46:19',
             ),
             5 => 
             array (
@@ -123,7 +123,25 @@ class DataTypesTableSeeder extends Seeder
                 'server_side' => 0,
                 'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
                 'created_at' => '2021-03-08 13:54:20',
-                'updated_at' => '2021-03-09 09:09:42',
+                'updated_at' => '2021-03-11 08:46:03',
+            ),
+            6 => 
+            array (
+                'id' => 11,
+                'name' => 'sub_orders',
+                'slug' => 'sub-orders',
+                'display_name_singular' => 'Sub Order',
+                'display_name_plural' => 'Sub Orders',
+                'icon' => 'voyager-bell',
+                'model_name' => 'App\\SubOrder',
+                'policy_name' => 'App\\Policies\\SubOrderPolicy',
+                'controller' => 'App\\Http\\Controllers\\Admin\\SubOrderController',
+                'description' => NULL,
+                'generate_permissions' => 1,
+                'server_side' => 0,
+                'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
+                'created_at' => '2021-03-10 12:11:47',
+                'updated_at' => '2021-03-11 08:47:25',
             ),
         ));
         
