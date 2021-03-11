@@ -36,7 +36,17 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
+                            @auth
+                            @if(auth()->user()->hasRole('seller'))
+                            <a class="nav-link" href="{{ route('voyager.dashboard') }}">Go to Your Shop</a>
+                            @elseif(auth()->user()->hasRole('admin'))
+                            <a class="nav-link" href="{{ route('voyager.dashboard') }}">Admin Panel</a>
+                            @elseif(auth()->user()->hasRole('user'))
                             <a class="nav-link" href="{{ route('shops.create') }}">Open Your Shop</a>
+                            @endif
+                            @else
+                            <a class="nav-link" href="{{ route('login') }}">Open Your Shop</a>
+                            @endauth
                         </li>
                     </ul>
 
