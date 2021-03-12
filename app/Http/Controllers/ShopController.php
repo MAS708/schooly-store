@@ -27,7 +27,11 @@ class ShopController extends Controller
      */
     public function create()
     {
-        return view('shops.create');
+        if(auth()->user()->hasRole('user')) {
+            return view('shops.create');
+        } else {
+        return redirect()->route('home')->withMessage('You Already Have A Shop');
+        }
     }
 
     /**
