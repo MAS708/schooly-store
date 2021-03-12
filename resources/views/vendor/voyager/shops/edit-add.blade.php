@@ -74,7 +74,7 @@
                                     @if (isset($row->details->view))
                                         @include($row->details->view, ['row' => $row, 'dataType' => $dataType, 'dataTypeContent' => $dataTypeContent, 'content' => $dataTypeContent->{$row->field}, 'action' => ($edit ? 'edit' : 'add'), 'view' => ($edit ? 'edit' : 'add'), 'options' => $row->details])
                                     @elseif ($row->type == 'relationship')
-                                        @if($row->display_name == 'users' && auth()->user()->hasRole('seller'))
+                                        @if($row->display_name == 'sellers' && auth()->user()->hasRole('seller'))
                                         <br>{{auth()->user()->name ?? 'n/a'}}
                                         <input type="hidden" name="user_id" value="{{auth()->user()->id}}">
                                     @else
