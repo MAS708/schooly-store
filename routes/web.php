@@ -18,6 +18,7 @@ Route::redirect('/', '/home');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/indexed', 'IndexController@index')->name('index');
 
 Route::get('/add-to-cart/{product}', 'CartController@add')->name('cart.add')->middleware('auth');
 Route::get('/cart', 'CartController@index')->name('cart.index')->middleware('auth');
