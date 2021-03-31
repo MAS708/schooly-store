@@ -25,6 +25,6 @@ class IndexController extends Controller
     public function index()
     {
         $products = Product::take(20)->latest()->get();
-        return view('home', ['allProducts' => $products]);
+        return view('index', ['allProducts' => $products]);
     }
 }
