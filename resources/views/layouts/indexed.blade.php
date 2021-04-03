@@ -47,27 +47,37 @@
         <!--Logo-->
         <div class="container d-flex align-items-center justify-content-center">
           <div class="row">
-            <h1 class="logo ml-auto"><a href="index.html"><img src="assets/img/Logo Schooly Store.svg" alt="" class="img-fluid"></a></h1>
+            <h1 class="logo ml-auto"><a href="{{ route('index')}}"><img src="assets/img/Logo Schooly Store.svg" alt="" class="img-fluid"></a></h1>
           </div>
         </div>
         <!--Menu-->
         <div class="container-fluid mt-3 ml-4 ml-4 ">
           <nav class="nav-menu d-none d-lg-block">
             <div class="row">
-              <div class="col-3">
+              <div class="col">
                 <div class="row">
                   <div class="menu-icon d-none d-lg-block ml-auto ">
-                    <a href="index.html"><img src="assets/img/home.svg" alt="" class="img-fluid mt-2"></a>
+                    <a href="{{route('index')}}"><img src="assets/img/home.svg" alt="" class="img-fluid mt-2"></a>
                   </div>
                   <div class="menu d-none d-lg-block ml-5 mr-4 mt-3 ">
-                    <a href="#Produk-Terbaru">Produk Terbaru</a>
+                    <a href="{{route('index')}}">Home</a>
                   </div>
                 </div>
               </div>
-              <div class="col-1 border-right border-left d-flex justify-content-center">
+              <div class="col border-right border-left d-flex justify-content-center">
                 <div class="row mt-3 ">
                   <div class="menu ml-3 d-none d-lg-block mr-4">
-                   <a href="inner-page.html">Kategori</a>
+                    @auth
+                        @if(auth()->user()->hasRole('seller'))
+                        <a href="{{ route('voyager.dashboard') }}">Go to Your Shop</a>
+                        @elseif(auth()->user()->hasRole('admin'))
+                        <a href="{{ route('voyager.dashboard') }}">Admin Panel</a>
+                        @elseif(auth()->user()->hasRole('user'))
+                        <a href="{{ route('shops.create') }}">Open Your Shop</a>
+                        @endif
+                        @else
+                        <a href="{{ route('login') }}">Open Your Shop</a>
+                    @endauth
                   </div>
                 </div>
               </div>
@@ -86,10 +96,10 @@
               <div class="col-3">
                 <div class="row ">
                   <div class="menu d-none d-lg-block mt-2 mr-4">
-                    <a href="#contact"><img src="assets/img/Shopping Card.svg" alt="" class="img-fluid mr-3 mb-2">Shopping Bag</a>
+                    <a href="{{ route('cart.index')}}"><img src="assets/img/Shopping Card.svg" alt="" class="img-fluid mr-3 mb-2">Shopping Bag</a>
                   </div>
                   <div class="user d-none d-lg-block ml-4 mt-1">
-                    <a href="index.html"><img src="assets/img/team/team-1.jpg" alt="" class="img-fluid box-user"></a>
+                    <a href="#"><img src="assets/img/team/team-1.jpg" alt="" class="img-fluid box-user"></a>
                   </div>
                 </div>
               </div>
@@ -111,16 +121,23 @@
               </form>
             </div>
             <div class="menu d-lg-none ml-2 ">
-              <a href="#contact"><i class="fa fa-angle-right mr-2"></i>Home</a>
+              <a href="{{ route('index') }}"><i class="fa fa-angle-right mr-2"></i>Home</a>
             </div>
             <div class="menu d-lg-none ml-2 ">
-              <a href="#contact"><i class="fas fa-angle-right mr-2"></i>Produk Terbaru</a>
+                @auth
+                @if(auth()->user()->hasRole('seller'))
+                <a href="{{ route('voyager.dashboard') }}"><i class="fas fa-angle-right mr-2"></i>Go to Your Shop</a>
+                @elseif(auth()->user()->hasRole('admin'))
+                <a href="{{ route('voyager.dashboard') }}"><i class="fas fa-angle-right mr-2"></i>Admin Panel</a>
+                @elseif(auth()->user()->hasRole('user'))
+                <a href="{{ route('shops.create') }}"><i class="fas fa-angle-right mr-2"></i>Open Your Shop</a>
+                @endif
+                @else
+                <a href="{{ route('login') }}"><i class="fas fa-angle-right mr-2"></i>Open Your shop</a>
+            @endauth
             </div>
             <div class="menu d-lg-none ml-2 ">
-              <a href="#contact"><i class="fas fa-angle-right mr-2"></i>Kategori</a>
-            </div>
-            <div class="menu d-lg-none ml-2 ">
-              <a href="#contact"><i class="fas fa-angle-right mr-2"></i>Shopping Bag</a>
+              <a href="{{ route('cart.index')}}"><i class="fas fa-angle-right mr-2"></i>Shopping Bag</a>
             </div>
           </nav>
         </div>
