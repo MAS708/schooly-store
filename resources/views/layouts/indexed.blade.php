@@ -30,7 +30,7 @@
   <link href="{{asset('assets/vendor/aos/aos.css')}}" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="{{asset('assets/css/style.css')}}" rel="stylesheet">
+  <link href="{{asset('assets/css/style2.css')}}" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: Presento - v1.1.1
@@ -88,8 +88,19 @@
                   <div class="menu d-none d-lg-block mt-2 mr-4">
                     <a href="#contact"><img src="assets/img/Shopping Card.svg" alt="" class="img-fluid mr-3 mb-2">Shopping Bag</a>
                   </div>
-                  <div class="user d-none d-lg-block ml-4 mt-1">
-                    <a href="index.html"><img src="assets/img/team/team-1.jpg" alt="" class="img-fluid box-user"></a>
+
+                  <div class="dropdown">
+
+                    <div class="user d-none d-lg-block ml-4 mt-1" type="button" id="dropdownakun" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     <img src="assets/img/team/team-1.jpg" alt="" class="img-fluid box-user">
+                    </div>
+                    <div class="dropdown-menu" aria-labelledby="dropdownakun">
+                        <div class="login mt-2"><i class="fas fa-sign-in-alt ml-3 mr-2"></i>Login </div>
+                        <div class="register mt-2"><i class="fas fa-user-plus ml-3 mr-2"></i>Register</div>
+                        <!--iki setelah login tank-->
+                        <div class="logout mt-2"><i class="fas fa-sign-out-alt ml-3 mr-2"></i>Logout</div>
+                    </div>
+
                   </div>
                 </div>
               </div>
@@ -101,8 +112,14 @@
             <div class="biodata d-lg-none text-center mt-2">
               <h3><b>Adam Alex</b></h3>
               <p>XII SIJA</p>
+              <div class="row d-flex justify-content-center mt-4 ">
+                  <div class="login"><i class="fas fa-sign-in-alt ml-3 mr-2"></i>Login </div>
+                  <div class="register"><i class="fas fa-user-plus ml-3 mr-2"></i>Register</div>
+                  <!--iki setelah login tank-->
+                  <div class="logout"><i class="fas fa-sign-out-alt mr-2"></i>Logout</div>
+              </div>
             </div>
-            <div class="Search2 d-lg-none d-flex justify-content-center mt-4 mb-3">
+            <div class="Search2 d-lg-none d-flex justify-content-center mt-3 mb-3">
               <form class="form-inline my-2 my-lg-0">
                 <div class="search-box2">
                   <input class="search-txt2 border-bottom" type="search" placeholder="Search Product" aria-label="Search">

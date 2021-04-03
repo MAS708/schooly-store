@@ -230,6 +230,7 @@
         </section>
     <!-- End Clients Section -->
 
+
     <!-- ======= barang Section ======= -->
         <section id="Produk-Terbaru" class="barang pt-0">
             <div class="container-fluid" data-aos="zoom-in">
@@ -252,7 +253,7 @@
                                 <div class="box-items ">
                                     <div class="box-items-price-top ">
                                     <div class="d-flex justify-content-end">
-                                        <div class="text-items-price-top border border-dark">{{$product->price}}</div>
+                                        <div class="text-items-price-top border border-dark">{{$product->price}} K</div>
                                     </div>
                                     </div>
                                     <div class="box-img-items d-flex align-items-center justify-content-center">
@@ -267,7 +268,7 @@
                                         </div>
                                         <div class="row">
                                         <div class="col">
-                                            <div class="text-items-price-bottom d-flex justify-content-start">{{$product->price}}</div>
+                                            <div class="text-items-price-bottom d-flex justify-content-start">{{$product->price}} K</div>
                                         </div>
                                         <div class="col">
                                             <div class="text-items-rating d-flex align-items-center justify-content-end">5<small><img src="assets/img/star.svg" alt="" class="img-fluid star"></small></div>
