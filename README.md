@@ -15,6 +15,8 @@ Kemudian Isi atau Edit File `.env` dengan Database Credential yang diperlukan
 
 `DB_DATABASE=schooly-store`
 
+`SESSION_LIFETIME=1440`
+
 
 Install the composer dependencies
 
