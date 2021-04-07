@@ -15,6 +15,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::redirect('/', '/home');
 Route::get('/index', 'IndexController@index')->name('index');
+Route::view('/search', 'search');
+Route::view('/product', 'product');
+Route::view('/addcart', 'addcart');
+
 
 // Auth::routes();
 // Authentication Routes...

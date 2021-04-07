@@ -1,3 +1,30 @@
+/*Pagination*/
+.pagination > li > a{
+    background-color: white;
+    color: #000000;
+}
+.pagination > li > a:focus,
+.pagination > li > a:hover,
+.pagination > li > span:focus,
+.pagination > li > span:hover{
+    color: #5a5a5a;
+    background-color: #eee;
+    border-color: #ddd;
+}
+.pagination > .active > a{
+    color: white;
+    background-color: #f8cccc !Important;
+    border: solid 1px #f8cccc !Important;
+}
+
+.pagination > .active > a:hover{
+    background-color: #f8cccc !Important;
+    border: solid 1px #f8cccc;
+}
+
+.text-hasil-search{
+color: #F09832;
+}
 
 .banner-atas{
     position: relative;
@@ -543,6 +570,7 @@
   .text-display{
     font-size: 150%;
   }
+
   .box-text-display-button{
     margin-top: 40px;
   }
@@ -631,6 +659,9 @@
     }
     .box-text-display{
     padding-left: 80px;
+    }
+    .box-text-display-search-index{
+        padding-left: 80px;
     }
     .text-display{
       font-size: 120%;
