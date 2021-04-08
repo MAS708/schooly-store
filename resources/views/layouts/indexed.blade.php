@@ -84,9 +84,9 @@
               <div class="col-5 ">
                 <div class="row mt-1 ">
                   <div class="Search d-none d-lg-block ml-4">
-                    <form class="form-inline my-2 my-lg-0  ">
+                    <form class="form-inline my-2 my-lg-0  " action="{{ route('searcher') }}" method="GET">
                       <div class="search-box border-bottom border-secondary ">
-                       <small><input class="search-txt" type="search" placeholder="Search Product" aria-label="Search"></small>
+                       <small><input class="search-txt" type="search" placeholder="Search Product" aria-label="Search" name="search"></small>
                        <img src="assets/img/Search.svg" alt="" class="img-fluid" type="submit">
                       </div>
                     </form>

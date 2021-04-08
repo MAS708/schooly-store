@@ -13,8 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::redirect('/', '/home');
+Route::redirect('/', '/index');
 Route::get('/index', 'IndexController@index')->name('index');
+Route::get('/searcher', 'IndexController@searcher')->name('searcher');
+// Route::view('/search', 'search');
+Route::view('/product', 'product');
+Route::view('/addcart', 'addcart');
 
 // Auth::routes();
 // Authentication Routes...
