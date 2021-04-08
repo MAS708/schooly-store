@@ -80,13 +80,13 @@
                 <div class="col-12 d-flex justify-content-center">
                     <nav aria-label="...">
                         <ul class="pagination">
-                            <li class="page-item">
+                            <li class="mr-1">
                                 <a class="page-link" href="{{ $allProducts->toArray()['first_page_url'] }}" tabindex="-1">First</a>
                             </li>
 
                                 {{ $allProducts->links('vendor.pagination.custom') }}
 
-                            <li class="page-item">
+                            <li class="ml-1">
                                 <a class="page-link" href="{{ $allProducts->toArray()['last_page_url'] }}">Last</a>
                              </li>
                         </ul>
