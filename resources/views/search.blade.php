@@ -83,7 +83,9 @@
                             <li class="page-item">
                                 <a class="page-link" href="{{ $allProducts->toArray()['first_page_url'] }}" tabindex="-1">First</a>
                             </li>
-                                <span>{{ $allProducts->links() }}</span>
+
+                                {{ $allProducts->links('vendor.pagination.custom') }}
+
                             <li class="page-item">
                                 <a class="page-link" href="{{ $allProducts->toArray()['last_page_url'] }}">Last</a>
                              </li>

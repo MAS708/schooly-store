@@ -17,8 +17,7 @@ Route::redirect('/', '/index');
 Route::get('/index', 'IndexController@index')->name('index');
 Route::get('/searcher', 'IndexController@searcher')->name('searcher');
 // Route::view('/search', 'search');
-Route::view('/product', 'product');
-Route::view('/addcart', 'addcart');
+Route::view('/search2', 'search2');
 
 // Auth::routes();
 // Authentication Routes...
