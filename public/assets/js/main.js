@@ -1,9 +1,4 @@
-/**
-* Template Name: Presento - v1.1.1
-* Template URL: https://bootstrapmade.com/presento-bootstrap-corporate-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
+
 !(function($) {
   "use strict";
 
@@ -124,14 +119,6 @@
     $('#header').addClass('header-scrolled');
   }
 
-  // Portfolio details carousel
-  $(".portfolio-details-carousel").owlCarousel({
-    autoplay: true,
-    dots: true,
-    loop: true,
-    items: 1
-  });
-
   // Back to top button
   $(window).scroll(function() {
     if ($(this).scrollTop() > 100) {
@@ -146,39 +133,6 @@
       scrollTop: 0
     }, 1500, 'easeInOutExpo');
     return false;
-  });
-
-  // kategori carousel (uses the Owl Carousel library)
-  $(".kategori-carousel").owlCarousel({
-    autoplay: false,
-    dots: false,
-    loop: false,
-    responsive: {
-      0:{
-        items: 2
-      },
-      320:{
-        items: 3
-      },
-      375: {
-        items: 4
-      },
-      425: {
-        items: 5
-      },
-      768: {
-        items: 6
-      },
-      1024: {
-        items: 8
-      },
-      1440:{
-        items: 8
-      },
-      2560:{
-        items: 12
-      }
-    }
   });
 
     // barang carousel (uses the Owl Carousel library)
@@ -213,75 +167,6 @@
         }
       }
     });
-
-
-  // Clients carousel (uses the Owl Carousel library)
-  $(".clients-carousel").owlCarousel({
-    autoplay: true,
-    dots: true,
-    loop: true,
-    responsive: {
-      0: {
-        items: 2
-      },
-      768: {
-        items: 4
-      },
-      900: {
-        items: 6
-      }
-    }
-  });
-
-  // jQuery counterUp
-  $('[data-toggle="counter-up"]').counterUp({
-    delay: 10,
-    time: 1000
-  });
-
-  // Testimonials carousel (uses the Owl Carousel library)
-  $(".testimonials-carousel").owlCarousel({
-    autoplay: true,
-    dots: true,
-    loop: true,
-    responsive: {
-      0: {
-        items: 1
-      },
-      768: {
-        items: 1
-      },
-      900: {
-        items: 2
-      },
-      1400: {
-        items: 3
-      }
-    }
-  });
-
-  // Porfolio isotope and filter
-  $(window).on('load', function() {
-    var portfolioIsotope = $('.portfolio-container').isotope({
-      itemSelector: '.portfolio-item',
-      layoutMode: 'fitRows'
-    });
-
-    $('#portfolio-flters li').on('click', function() {
-      $("#portfolio-flters li").removeClass('filter-active');
-      $(this).addClass('filter-active');
-
-      portfolioIsotope.isotope({
-        filter: $(this).data('filter')
-      });
-      aos_init();
-    });
-
-    // Initiate venobox (lightbox feature used in portofilo)
-    $(document).ready(function() {
-      $('.venobox').venobox();
-    });
-  });
 
   // Init AOS
   function aos_init() {

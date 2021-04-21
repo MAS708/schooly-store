@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::redirect('/', '/home');
 Route::get('/index', 'IndexController@index')->name('index');
 Route::view('/search', 'search');
-Route::view('/product', 'product');
+Route::view('/detail', 'detail');
 Route::view('/addcart', 'addcart');
 
 
@@ -54,7 +54,6 @@ Route::resource('shops','ShopController')->middleware('auth');
 
 Route::group(['prefix' => 'seller'], function () {
     Voyager::routes();
-
     Route::get('/order/delivered/{suborder}', 'SubOrderController@markDelivered')->name('order.delivered');
     Route::get('/order/canceled/{suborder}', 'SubOrderController@markCanceled')->name('order.canceled');
 });
