@@ -32,6 +32,22 @@
   <!-- Template Main CSS File -->
   <link href="{{asset('assets/css/style.css')}}" rel="stylesheet">
 
+<!-- Hidden Arrow From Input Number -->
+<style>
+    /* Chrome, Safari, Edge, Opera */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    /* Firefox */
+    input[type=number] {
+      -moz-appearance: textfield;
+    }
+    </style>
+
+
   <!-- =======================================================
   * Template Name: Presento - v1.1.1
   * Template URL: https://bootstrapmade.com/presento-bootstrap-corporate-template/
@@ -84,9 +100,9 @@
               <div class="col-5 ">
                 <div class="row mt-1 ">
                   <div class="Search d-none d-lg-block ml-4">
-                    <form class="form-inline my-2 my-lg-0  ">
+                    <form class="form-inline my-2 my-lg-0  " action="{{ route('searcher') }}" method="GET">
                       <div class="search-box border-bottom border-secondary ">
-                       <small><input class="search-txt" type="search" placeholder="Search Product" aria-label="Search"></small>
+                       <small><input class="search-txt" type="search" placeholder="Search Product" aria-label="Search" name="search"></small>
                        <img src="assets/img/Search.svg" alt="" class="img-fluid" type="submit">
                       </div>
                     </form>
@@ -98,9 +114,35 @@
                   <div class="menu d-none d-lg-block mt-2 mr-4">
                     <a href="{{ route('cart.index')}}"><img src="assets/img/Shopping Card.svg" alt="" class="img-fluid mr-3 mb-2">Shopping Bag</a>
                   </div>
-                  <div class="user d-none d-lg-block ml-4 mt-1">
-                    <a href="#"><img src="assets/img/team/team-1.jpg" alt="" class="img-fluid box-user"></a>
-                  </div>
+                    <div class="dropdown">
+                        <div class="user d-none d-lg-block ml-4 mt-1" type="button" id="dropdownakun" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="assets/img/team/team-1.jpg" alt="" class="img-fluid box-user">
+                        </div>
+                        <div class="dropdown-menu" aria-labelledby="dropdownakun">
+                            @guest
+                                    <div class="login mt-2"><a href="{{ route('login') }}"><i class="fas fa-sign-in-alt ml-3 mr-2"></i>Login </a></div>
+                                @if (Route::has('register'))
+                                    <div class="register mt-2"><a href="{{ route('register') }}"><i class="fas fa-user-plus ml-3 mr-2"></i>Register </a></div>
+                                @endif
+                            @else
+                            <!--iki setelah login tank-->
+                            @guest
+                                <a class ="dropdown-item" href="{{ route('index') }}"><i class="fas fa-user-circle mr-2"></i>Namae</a>
+                                @else
+                                <a class ="dropdown-item" href="{{ route('index') }}"><i class="fas fa-user-circle mr-2"></i>{{ Auth::user()->name }}</a>
+                            @endguest
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();"><i class="fas fa-sign-out-alt mr-2"></i>
+                                        {{ __('Logout') }}
+                                    </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                            {{-- <div class="logout mt-2"><a href="{{ route('logout') }}"></a><i class="fas fa-sign-out-alt ml-3 mr-2"></i>Logout</div> --}}
+                            @endguest
+                        </div>
+                    </div>
                 </div>
               </div>
             </div>
@@ -109,8 +151,37 @@
               <li class=""><a href="index.html"><img src="assets/img/team/team-1.jpg" alt="" class="img-fluid box-user2"></a></li>
             </div>
             <div class="biodata d-lg-none text-center mt-2">
-              <h3><b>Adam Alex</b></h3>
+                @guest
+                    <h3><b><a href="{{ route('index') }}">Guest</a></b></h3>
+                    @else
+                    <h3><b><a href="{{ route('index') }}">{{ Auth::user()->name }}</a></b></h3>
+                @endguest
+
               <p>XII SIJA</p>
+
+              <div class="row d-flex justify-content-center mt-4 ">
+                @guest
+                            <div class="login mt-2"><a href="{{ route('login') }}"><i class="fas fa-sign-in-alt ml-3 mr-2"></i>Login </a></div>
+                        @if (Route::has('register'))
+                            <div class="register mt-2"><a href="{{ route('register') }}"><i class="fas fa-user-plus ml-3 mr-2"></i>Register</a></div>
+                        @endif
+                    @else
+                    <!--iki setelah login tank-->
+                    <a class="dropdown-item" href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                                            document.getElementById('logout-form').submit();"><i class="fas fa-sign-out-alt mr-2"></i>
+                                {{ __('Logout') }}
+                            </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
+                    {{-- <div class="logout mt-2"><a href="{{ route('logout') }}"></a><i class="fas fa-sign-out-alt ml-3 mr-2"></i>Logout</div> --}}
+                @endguest
+                {{-- <div class="login"><i class="fas fa-sign-in-alt ml-3 mr-2"></i>Login </div>
+                <div class="register"><i class="fas fa-user-plus ml-3 mr-2"></i>Register</div>
+                <!--iki setelah login tank-->
+                <div class="logout"><i class="fas fa-sign-out-alt mr-2"></i>Logout</div> --}}
+              </div>
             </div>
             <div class="Search2 d-lg-none d-flex justify-content-center mt-4 mb-3">
               <form class="form-inline my-2 my-lg-0">
@@ -145,6 +216,34 @@
     <!-- End Header -->
 
       @yield('content')
+
+
+
+        @if (session()->has('message'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+                <strong>{{session('message')}}</strong>
+            </div>
+
+            <script>
+                $(".alert").alert();
+            </script>
+        @endif
+
+        @if (session()->has('error'))
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+                <strong>{{session('error')}}</strong>
+            </div>
+
+            <script>
+                $(".alert").alert();
+            </script>
+        @endif
 
     <!-- ======= Footer ======= -->
         <footer id="footer">
