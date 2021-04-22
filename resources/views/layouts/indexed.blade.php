@@ -32,6 +32,22 @@
   <!-- Template Main CSS File -->
   <link href="{{asset('assets/css/style.css')}}" rel="stylesheet">
 
+<!-- Hidden Arrow From Input Number -->
+<style>
+    /* Chrome, Safari, Edge, Opera */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    /* Firefox */
+    input[type=number] {
+      -moz-appearance: textfield;
+    }
+    </style>
+
+
   <!-- =======================================================
   * Template Name: Presento - v1.1.1
   * Template URL: https://bootstrapmade.com/presento-bootstrap-corporate-template/
