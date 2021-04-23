@@ -31,7 +31,7 @@
                                 </div>
                                 <div class="col-5 col-md-3 d-flex justify-content-start p-0">
                                     <div class="box-img-items d flex align-items-center">
-                                        <img src="{{ Voyager::image( $item->imagess ) }}" alt="img-fluid" class="img-items">
+                                        <img src="{{ Voyager::image( $item->attributes->image ) }}" alt="img-fluid" class="img-items">
                                     </div>
                                 </div>
                                 <div class="col-5 col-md-6 d-flex justify-content-start p-0">
