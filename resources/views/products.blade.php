@@ -9,8 +9,6 @@
     </section>
     <!-- End Hero -->
 
-
-
     <!-- ======= barang Section ======= -->
     <section id="Produk" class="barang">
         <div class="container-fluid" data-aos="zoom-in">
@@ -18,7 +16,7 @@
                 <div class="col-xl-12">
                     <div class="box-text-display d-flex justify-content-start">
                         <div class="text-display">
-                            <div class="row">Hasil Pencarian Untuk "<div class="text-hasil-search">{{($search)}}</div>"</div>
+                            <div class="row">Hasil Pencarian Untuk "<div class="text-hasil-search">{{ $search }}</div>"</div>
                         </div>
                     </div>
                 </div>
@@ -51,7 +49,7 @@
                                                     <div class="text-items-price-bottom d-flex justify-content-start">Rp.{{number_format($product->price, 2)}}</div>
                                                 </div>
                                                 <div class="col">
-                                                    <div class="text-items-rating d-flex align-items-center justify-content-end">5<small><img src="assets/img/star.svg" alt="" class="img-fluid star"></small></div>
+                                                    <div class="text-items-rating d-flex align-items-center justify-content-end">5<small><img src="{{asset('assets/img/star.svg')}}" alt="" class="img-fluid star"></small></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -60,7 +58,7 @@
                                         <div class="card-footer bg-white border-0 ">
                                             <div class="row">
                                                 <div class="col">
-                                                    <a href="#">
+                                                    <a href="{{ route('product.detail', $product->id) }}">
                                                         <div class="text-buy-now border border-dark  d-flex align-items-center justify-content-center" > BUY NOW</div>
                                                     </a>
                                                 </div>
@@ -96,9 +94,6 @@
         </div>
     </section>
     <!-- End barang Section -->
-
-
-
 
   </main>
 

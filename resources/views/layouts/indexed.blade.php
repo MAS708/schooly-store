@@ -63,17 +63,17 @@
         <!--Logo-->
         <div class="container d-flex align-items-center justify-content-center">
           <div class="row">
-            <h1 class="logo ml-auto"><a href="{{ route('index')}}"><img src="assets/img/Logo Schooly Store.svg" alt="" class="img-fluid"></a></h1>
+            <h1 class="logo ml-auto"><a href="{{ route('index')}}"><img src="{{asset('assets/img/Logo Schooly Store.svg')}}" alt="" class="img-fluid"></a></h1>
           </div>
         </div>
         <!--Menu-->
         <div class="container-fluid mt-3 ml-4 ml-4 ">
           <nav class="nav-menu d-none d-lg-block">
             <div class="row">
-              <div class="col">
+              <div class="col d-none d-lg-block">
                 <div class="row">
                   <div class="menu-icon d-none d-lg-block ml-auto ">
-                    <a href="{{route('index')}}"><img src="assets/img/home.svg" alt="" class="img-fluid mt-2"></a>
+                    <a href="{{route('index')}}"><img src="{{asset('assets/img/home.svg')}}" alt="" class="img-fluid mt-2"></a>
                   </div>
                   <div class="menu d-none d-lg-block ml-5 mr-4 mt-3 ">
                     <a href="{{route('index')}}">Home</a>
@@ -103,7 +103,7 @@
                     <form class="form-inline my-2 my-lg-0  " action="{{ route('searcher') }}" method="GET">
                       <div class="search-box border-bottom border-secondary ">
                        <small><input class="search-txt" type="search" placeholder="Search Product" aria-label="Search" name="search"></small>
-                       <img src="assets/img/Search.svg" alt="" class="img-fluid" type="submit">
+                       <img src="{{asset('assets/img/Search.svg')}}" alt="" class="img-fluid" type="submit">
                       </div>
                     </form>
                   </div>
@@ -112,33 +112,33 @@
               <div class="col-3">
                 <div class="row ">
                   <div class="menu d-none d-lg-block mt-2 mr-4">
-                    <a href="{{ route('cart.index')}}"><img src="assets/img/Shopping Card.svg" alt="" class="img-fluid mr-3 mb-2">Shopping Bag</a>
+                    <a href="{{ route('cart.index')}}"><img src="{{asset('assets/img/Shopping Card.svg')}}" alt="" class="img-fluid mr-3 mb-2">Shopping Bag</a>
                   </div>
                     <div class="dropdown">
                         <div class="user d-none d-lg-block ml-4 mt-1" type="button" id="dropdownakun" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img src="assets/img/team/team-1.jpg" alt="" class="img-fluid box-user">
+                            <img src="{{asset('assets/img/team/team-1.jpg')}}" alt="" class="img-fluid box-user">
                         </div>
                         <div class="dropdown-menu" aria-labelledby="dropdownakun">
                             @guest
-                                    <div class="login mt-2"><a href="{{ route('login') }}"><i class="fas fa-sign-in-alt ml-3 mr-2"></i>Login </a></div>
+                                    <div class="menu mt-2" style="cursor: pointer"><a href="{{ route('login') }}"><i class="fas fa-sign-in-alt ml-3 mr-2"></i>Login </a></div>
                                 @if (Route::has('register'))
-                                    <div class="register mt-2"><a href="{{ route('register') }}"><i class="fas fa-user-plus ml-3 mr-2"></i>Register </a></div>
+                                    <div class="menu mt-2" style="cursor: pointer"><a href="{{ route('register') }}"><i class="fas fa-user-plus ml-3 mr-2"></i>Register </a></div>
                                 @endif
                             @else
                             <!--iki setelah login tank-->
                             @guest
-                                <a class ="dropdown-item" href="{{ route('index') }}"><i class="fas fa-user-circle mr-2"></i>Namae</a>
+                                <div class="menu mt-2" style="cursor: pointer"><a class ="dropdown-item" href="{{ route('index') }}"><i class="fas fa-user-circle mr-2"></i>Namae</a></div>
                                 @else
-                                <a class ="dropdown-item" href="{{ route('index') }}"><i class="fas fa-user-circle mr-2"></i>{{ Auth::user()->name }}</a>
+                                <div class="menu mt-2" style="cursor: pointer"><a class ="dropdown-item" href="{{ route('index') }}"><i class="fas fa-user-circle mr-2"></i>{{ Auth::user()->name }}</a></div>
                             @endguest
-                            <a class="dropdown-item" href="{{ route('logout') }}"
+                            <div class="menu mt-2" style="cursor: pointer"><a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();"><i class="fas fa-sign-out-alt mr-2"></i>
                                         {{ __('Logout') }}
                                     </a>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                 @csrf
-                            </form>
+                            </form></div>
                             {{-- <div class="logout mt-2"><a href="{{ route('logout') }}"></a><i class="fas fa-sign-out-alt ml-3 mr-2"></i>Logout</div> --}}
                             @endguest
                         </div>
@@ -148,7 +148,7 @@
             </div>
             <!--mobile-->
             <div class="user d-lg-none text-center mt-5">
-              <li class=""><a href="index.html"><img src="assets/img/team/team-1.jpg" alt="" class="img-fluid box-user2"></a></li>
+              <a href="{{route('index')}}"><img src="{{asset('assets/img/team/team-1.jpg')}}" alt="" class="img-fluid box-user2"></a>
             </div>
             <div class="biodata d-lg-none text-center mt-2">
                 @guest
@@ -161,20 +161,22 @@
 
               <div class="row d-flex justify-content-center mt-4 ">
                 @guest
-                            <div class="login mt-2"><a href="{{ route('login') }}"><i class="fas fa-sign-in-alt ml-3 mr-2"></i>Login </a></div>
+                            <div class="menu" style="cursor: pointer"><a href="{{ route('login') }}"><i class="fas fa-sign-in-alt ml-3 mr-2"></i>Login </a></div>
                         @if (Route::has('register'))
-                            <div class="register mt-2"><a href="{{ route('register') }}"><i class="fas fa-user-plus ml-3 mr-2"></i>Register</a></div>
+                            <div  class="menu" style="cursor: pointer"><a href="{{ route('register') }}"><i class="fas fa-user-plus ml-3 mr-2"></i>Register</a></div>
                         @endif
                     @else
                     <!--iki setelah login tank-->
-                    <a class="dropdown-item" href="{{ route('logout') }}"
-                            onclick="event.preventDefault();
-                                            document.getElementById('logout-form').submit();"><i class="fas fa-sign-out-alt mr-2"></i>
-                                {{ __('Logout') }}
-                            </a>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                        @csrf
-                    </form>
+                    <div  class="menu" style="cursor: pointer">
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                                document.getElementById('logout-form').submit();"><i class="fas fa-sign-out-alt mr-2"></i>
+                                    {{ __('Logout') }}
+                                </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                    </div>
                     {{-- <div class="logout mt-2"><a href="{{ route('logout') }}"></a><i class="fas fa-sign-out-alt ml-3 mr-2"></i>Logout</div> --}}
                 @endguest
                 {{-- <div class="login"><i class="fas fa-sign-in-alt ml-3 mr-2"></i>Login </div>
@@ -183,10 +185,10 @@
                 <div class="logout"><i class="fas fa-sign-out-alt mr-2"></i>Logout</div> --}}
               </div>
             </div>
-            <div class="Search2 d-lg-none d-flex justify-content-center mt-4 mb-3">
-              <form class="form-inline my-2 my-lg-0">
+            <div class="Search2 d-lg-none d-flex justify-content-center mt-3 mb-3">
+              <form class="form-inline my-2 my-lg-0" action="{{ route('searcher') }}" method="GET">
                 <div class="search-box2">
-                  <input class="search-txt2 border-bottom" type="search" placeholder="Search Product" aria-label="Search">
+                  <input class="search-txt2 border-bottom" type="search" placeholder="Search Product" aria-label="Search" name="search">
                   <i class="btn2-search fas fa-search fa-md" type="submit"></i>
                 </div>
               </form>
@@ -253,7 +255,7 @@
                     <div class="col-lg-3 col-md-6 border border-light footer-links d-flex align-items-center justify-content-center">
                     <div class="container border border-light">
                         <div class="row d-flex justify-content-start">
-                        <img src="assets/img/Logo Schooly Store.svg" alt="img-fluid" class="img-fluid">
+                        <img src="{{asset('assets/img/Logo Schooly Store.svg')}}" alt="img-fluid" class="img-fluid">
                         </div>
                         <div class="row d-flex justify-content-start">
                         <div class="social-links ">

@@ -24,8 +24,12 @@ class IndexController extends Controller
      */
     public function index()
     {
-        $products = Product::take(20)->latest()->get();
-        return view('index', ['allProducts' => $products]);
+        $productLatest = Product::take(20)->latest()->get();
+        $productsRandom = Product::all()->random(20);
+        $productHighest = Product::take(20)->orderBy('price', 'desc')->get();
+        return view('index', [  'latest' => $productLatest,
+                                'random' => $productsRandom,
+                                'highest' => $productHighest ]);
     }
 
     public function searcher(Request $request)
@@ -41,9 +45,31 @@ class IndexController extends Controller
 
         // Return the search view with the resluts compacted
         $allProducts->appends(['search' => $search]);
-        return view('search', compact('allProducts'));
+        return view('search', compact('allProducts','search'));
 
-        // $products = Product::take(20)->latest()->get();
-        // return view('search', ['allProducts' => $products]);
+    }
+
+    public function detail($product)
+    {
+        //Show Products
+        $products = Product::find($product);
+        $productsRandom = Product::all()->random(20);
+        return view('detail', [ 'products' => $products,
+                                'random' => $productsRandom]);
+    }
+
+    public function highest(){
+        $productHighest = Product::orderBy('price', 'desc')->paginate(25);
+        return view('products', [  'allProducts' => $productHighest, 'search' => 'Produk Termahal'] );
+    }
+
+    public function latest(){
+        $productLatest = Product::latest()->paginate(25);
+        return view('products', [  'allProducts' => $productLatest , 'search' => 'Produk Terbaru'] );
+    }
+
+    public function hottest(){
+        $productsRandom = Product::inRandomOrder()->paginate(25);
+        return view('products', [  'allProducts' => $productsRandom, 'search' => 'Produk Acak'] );
     }
 }

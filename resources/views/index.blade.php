@@ -63,13 +63,13 @@
                         <div class="owl-carousel barang-carousel ">
 
                         <!-- ITEM CARD NEW -->
-                            @foreach ($allProducts as $product)
+                            @foreach ($latest as $product)
 
                             <div class="col d-flex justify-content-center p-0">
                                 <div class="box-items ">
                                     <div class="box-items-price-top ">
                                     <div class="d-flex justify-content-end">
-                                        <div class="text-items-price-top border border-dark">{{$product->price}}</div>
+                                        <div class="text-items-price-top border border-dark">Rp. {{number_format($product->price, 2)}} ,-</div>
                                     </div>
                                     </div>
                                     <div class="box-img-items d-flex align-items-center justify-content-center">
@@ -84,7 +84,7 @@
                                         </div>
                                         <div class="row">
                                         <div class="col">
-                                            <div class="text-items-price-bottom d-flex justify-content-start">{{$product->price}}</div>
+                                            <div class="text-items-price-bottom d-flex justify-content-start">Rp.{{number_format($product->price, 2)}}</div>
                                         </div>
                                         <div class="col">
                                             <div class="text-items-rating d-flex align-items-center justify-content-end">5<small><img src="assets/img/star.svg" alt="" class="img-fluid star"></small></div>
@@ -96,7 +96,9 @@
                                     <div class="card-footer bg-white border-0 ">
                                         <div class="row">
                                         <div class="col">
-                                            <a href="{{ route('cart.add', $product->id) }}">
+                                            {{-- <a href="{{ route('cart.add', $product->id) }}"> --}}
+                                            <a href="{{ route('product.detail', $product->id) }}">
+
                                             <div class="text-buy-now border border-dark  d-flex align-items-center justify-content-center" > BUY NOW</div>
                                             </a>
                                         </div>
@@ -115,7 +117,7 @@
             <div class="row mt-4">
                 <div class="col-xl-12">
                 <div class="box-text-display-button d-flex justify-content-center">
-                    <a href=""><div class="text-display-button text-center">Lihat Semua Yang Lagi Hangat</div> </a>
+                    <a href="{{ route('products.latest') }}"><div class="text-display-button text-center">Lihat Semua Yang Terbaru</div> </a>
                 </div>
                 </div>
             </div>
@@ -135,7 +137,7 @@
             <div class="row">
             <div class="col-xl-12">
                 <div class="box-text-display d-flex justify-content-start">
-                <div class="text-display">Yang lagi Hangat</div>
+                <div class="text-display">Produk Acak Yang Mungkin Sukai</div>
                 </div>
             </div>
             </div>
@@ -145,13 +147,13 @@
                     <div class="owl-carousel barang-carousel ">
 
                         <!-- ITEM CARD NEW -->
-                            @foreach ($allProducts as $product)
+                            @foreach ($random as $product)
 
                             <div class="col d-flex justify-content-center p-0">
                                 <div class="box-items ">
                                     <div class="box-items-price-top ">
                                     <div class="d-flex justify-content-end">
-                                        <div class="text-items-price-top border border-dark">{{$product->price}}</div>
+                                        <div class="text-items-price-top border border-dark">Rp.{{number_format($product->price, 2)}}</div>
                                     </div>
                                     </div>
                                     <div class="box-img-items d-flex align-items-center justify-content-center">
@@ -166,7 +168,7 @@
                                         </div>
                                         <div class="row">
                                         <div class="col">
-                                            <div class="text-items-price-bottom d-flex justify-content-start">{{$product->price}}</div>
+                                            <div class="text-items-price-bottom d-flex justify-content-start">Rp.{{number_format($product->price, 2)}}</div>
                                         </div>
                                         <div class="col">
                                             <div class="text-items-rating d-flex align-items-center justify-content-end">5<small><img src="assets/img/star.svg" alt="" class="img-fluid star"></small></div>
@@ -178,6 +180,7 @@
                                     <div class="card-footer bg-white border-0 ">
                                         <div class="row">
                                         <div class="col">
+                                            {{-- <a href="{{ route('cart.add', $product->id) }}"> --}}
                                             <a href="{{ route('cart.add', $product->id) }}">
                                             <div class="text-buy-now border border-dark  d-flex align-items-center justify-content-center" > BUY NOW</div>
                                             </a>
@@ -197,7 +200,7 @@
             <div class="row mt-4">
             <div class="col-xl-12">
                 <div class="box-text-display-button d-flex justify-content-center">
-                <a href=""><div class="text-display-button text-center">Lihat Semua Yang Lagi Hangat</div> </a>
+                <a href="{{ route('products.hottest') }}"><div class="text-display-button text-center">Lihat Produk Acak Lagi</div> </a>
                 </div>
             </div>
             </div>
@@ -217,7 +220,7 @@
             <div class="row">
             <div class="col-xl-12">
                 <div class="box-text-display d-flex justify-content-start">
-                <div class="text-display">Yang lagi Hangat</div>
+                <div class="text-display">Pilihan Tertinggi</div>
                 </div>
             </div>
             </div>
@@ -227,13 +230,13 @@
                         <div class="owl-carousel barang-carousel ">
 
                                 <!-- ITEM CARD NEW -->
-                                    @foreach ($allProducts as $product)
+                                    @foreach ($highest as $product)
 
                                     <div class="col d-flex justify-content-center p-0">
                                         <div class="box-items ">
                                             <div class="box-items-price-top ">
                                             <div class="d-flex justify-content-end">
-                                                <div class="text-items-price-top border border-dark">{{$product->price}}</div>
+                                                <div class="text-items-price-top border border-dark">Rp.{{number_format($product->price, 2)}}</div>
                                             </div>
                                             </div>
                                             <div class="box-img-items d-flex align-items-center justify-content-center">
@@ -248,7 +251,7 @@
                                                 </div>
                                                 <div class="row">
                                                 <div class="col">
-                                                    <div class="text-items-price-bottom d-flex justify-content-start">{{$product->price}}</div>
+                                                    <div class="text-items-price-bottom d-flex justify-content-start">Rp.{{number_format($product->price, 2)}}</div>
                                                 </div>
                                                 <div class="col">
                                                     <div class="text-items-rating d-flex align-items-center justify-content-end">5<small><img src="assets/img/star.svg" alt="" class="img-fluid star"></small></div>
@@ -260,7 +263,9 @@
                                             <div class="card-footer bg-white border-0 ">
                                                 <div class="row">
                                                 <div class="col">
+                                                    {{-- <a href="{{ route('cart.add', $product->id) }}"> --}}
                                                     <a href="{{ route('cart.add', $product->id) }}">
+
                                                     <div class="text-buy-now border border-dark  d-flex align-items-center justify-content-center" > BUY NOW</div>
                                                     </a>
                                                 </div>
@@ -279,7 +284,7 @@
             <div class="row mt-4">
             <div class="col-xl-12">
                 <div class="box-text-display-button d-flex justify-content-center">
-                <a href=""><div class="text-display-button text-center">Lihat Semua Yang Lagi Hangat</div> </a>
+                <a href="{{ route('products.highest') }}"><div class="text-display-button text-center">Lihat Semua Pilihan Tertinggi</div> </a>
                 </div>
             </div>
             </div>

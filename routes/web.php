@@ -16,12 +16,12 @@ use Illuminate\Support\Facades\Route;
 Route::redirect('/', '/index');
 Route::get('/index', 'IndexController@index')->name('index');
 Route::get('/searcher', 'IndexController@searcher')->name('searcher');
-// Route::view('/search', 'search');
-Route::view('/search2', 'search2');
-Route::view('/detail', 'detail');
-Route::view('/product', 'product');
-Route::view('/addcart', 'cart.addcart');
-Route::view('/addcart2', 'cart.addcart');
+Route::get('/products/highest', 'IndexController@highest')->name('products.highest');
+Route::get('/products/latest', 'IndexController@latest')->name('products.latest');
+Route::get('/products/hottest', 'IndexController@hottest')->name('products.hottest');
+Route::get('/detail/{product}', 'IndexController@detail')->name('product.detail');
+
+// Route::view('/addcart', 'cart.addcart');
 
 // Auth::routes();
 // Authentication Routes...
@@ -50,6 +50,8 @@ Route::get('/cart/checkout', 'CartController@checkout')->name('cart.checkout')->
 Route::resource('orders', 'OrderController')->middleware('auth');
 
 Route::resource('shops','ShopController')->middleware('auth');
+
+// Route::get('/product/{product}','ProductController@index')->name('product.detail')->middleware('auth');
 
 // Route::group(['prefix' => 'admin'], function () {
 //     Voyager::routes();

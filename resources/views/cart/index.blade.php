@@ -31,14 +31,14 @@
                                 </div>
                                 <div class="col-5 col-md-3 d-flex justify-content-start p-0">
                                     <div class="box-img-items d flex align-items-center">
-                                        <img src="{{ Voyager::image( $item->imagess ) }}" alt="img-fluid" class="img-items">
+                                        <img src="{{ Voyager::image( $item->attributes->image ) }}" alt="img-fluid" class="img-items">
                                     </div>
                                 </div>
                                 <div class="col-5 col-md-6 d-flex justify-content-start p-0">
                                     <div class="addcart-produk d-flex flex-column ml-2">
                                         <div class="box-text-display-addcart-index">
                                             <div class="text-display">{{ $item->name }}</div>
-                                            <div class="text-display mt-2">  {{ number_format(\Cart::session(auth()->id())->get($item->id)->getPriceSum(), 2) }}</div>
+                                            <div class="text-display mt-2">  Rp. {{ number_format(\Cart::session(auth()->id())->get($item->id)->getPriceSum(), 2) }} ,-</div>
                                         </div>
                                         <div class="produk-addcart mt-auto ">
                                             <div class="border mb-3"></div>
