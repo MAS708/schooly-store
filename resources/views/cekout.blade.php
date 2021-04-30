@@ -15,7 +15,7 @@
         <div class="margin mt-5">
             <div class="row">
                 <div class="col-1"></div>
-                    <div class="col-10 col-md-5">
+                    <div class="col-5">
                         <div class="text-hasil-search font-weight-light text-secondary text-center">Nama</div>
                         <form>
                             <div class="input-group">
@@ -23,7 +23,7 @@
                             </div>
                         </form>
                     </div>
-                    <div class="col-5 d-none d-md-block">
+                    <div class="col-5">
                         <div class="text-hasil-search font-weight-light text-secondary text-center">No Telepon</div>
                         <form>
                             <div class="input-group">
@@ -31,22 +31,6 @@
                             </div>
                         </form>
                     </div>
-                <div class="col-1"></div>
-            </div>
-        </div>
-        <!-- ======= No Mobile ======= -->
-        <div class="margin mt-5 d-md-none">
-            <div class="row">
-                <div class="col-1"></div>
-                    <div class="col-10">
-                        <div class="text-hasil-search font-weight-light text-secondary text-center">No Telepon</div>
-                        <form>
-                            <div class="input-group">
-                                <input type="number" class="form-control text-center mt-2" style="background-color:#FFF6E3; border:none;" aria-label="no" aria-describedby="validatedInputGroup" required>
-                            </div>
-                        </form>
-                    </div>
-                </div>
                 <div class="col-1"></div>
             </div>
         </div>
