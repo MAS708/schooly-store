@@ -5,13 +5,12 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Presento Bootstrap Template - Index</title>
+  <title>Schooly Store</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="{{asset('assets/img/favicon.png')}}" rel="icon">
-  <link href="{{asset('assets/img/apple-touch-icon.png')}}" rel="apple-touch-icon">
+  <link href="{{asset('assets/img/Logo Schooly Store.svg')}}" rel="icon">
 
   <!--font awesome-->
   <link href="{{asset('assets/vendor/fontawesome-free-5.15.2-web/css/all.min.css')}}" rel="stylesheet">
@@ -73,11 +72,11 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-1 d-none d-lg-block border-right border-left d-flex justify-content-center">
+                    <div class="col-1 d-none d-lg-block border-right border-left">
                         <div class="row mt-3 ">
-                        <div class="menu ml-3 d-none d-lg-block mr-4">
-                        <a href="inner-page.html">Kategori</a>
-                        </div>
+                            <div class="menu d-none d-lg-block mx-auto">
+                                <a href="inner-page.html">Kategori</a>
+                            </div>
                         </div>
                     </div>
                     <div class="col-5 d-none d-lg-block">

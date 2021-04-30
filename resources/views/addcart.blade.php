@@ -22,7 +22,7 @@
                     <div class="produk-addcart-index mb-5">
                         <!-- ITEM CARD NEW -->
                         <div class="row ml-2">
-                            <div class="col-1 col-md-1 col-sm-12 d-flex justify-content-start p-0">
+                            <div class="col-1 d-flex justify-content-start p-0">
                                 <div class="icon-addcart d-flex align-items-center">
                                     <i class="fas fa-bookmark fa-2x d-none d-md-block"></i>
                                     <i class="fas fa-bookmark fa-lg d-md-none"></i>
@@ -76,7 +76,7 @@
                     <div class="produk-addcart-index mb-5">
                         <!-- ITEM CARD NEW -->
                         <div class="row ml-2">
-                            <div class="col-1 col-md-1 col-sm-12 d-flex justify-content-start p-0">
+                            <div class="col-1 d-flex justify-content-start p-0">
                                 <div class="icon-addcart d-flex align-items-center">
                                     <i class="fas fa-bookmark fa-2x d-none d-md-block"></i>
                                     <i class="fas fa-bookmark fa-lg d-md-none"></i>
@@ -130,7 +130,7 @@
                     <div class="produk-addcart-index mb-5">
                         <!-- ITEM CARD NEW -->
                         <div class="row ml-2">
-                            <div class="col-1 col-md-1 col-sm-12 d-flex justify-content-start p-0">
+                            <div class="col-1 d-flex justify-content-start p-0">
                                 <div class="icon-addcart d-flex align-items-center">
                                     <i class="fas fa-bookmark fa-2x d-none d-md-block"></i>
                                     <i class="fas fa-bookmark fa-lg d-md-none"></i>
@@ -138,7 +138,7 @@
                             </div>
                             <div class="col-5 col-md-3 d-flex justify-content-start p-0">
                                 <div class="box-img-items d flex align-items-center">
-                                    <img src="" alt="img-fluid" class="img-items">
+                                    <img src="assets/img/gunting.png" alt="img-fluid" class="img-items">
                                 </div>
                             </div>
                             <div class="col-5 col-md-6 d-flex justify-content-start p-0">
@@ -220,7 +220,7 @@
             </div>
         </div>
     </section>
-    <!-- End Hero -->
+    <!-- End Checkhout -->
 
 
 

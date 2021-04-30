@@ -23,11 +23,11 @@
                                 </div>
                                 <div class="col-6 d-flex justify-content-start">
                                     <div class="detail-produk d-flex flex-column ml-2">
-                                        <div class="box-text-display-addcart-index">
+                                        <div class="box-text-display-detail-index">
                                             <div class="text-display-2 text-dark" style=" font-weight: 350;" >Bakmi Mevah asdddddd</div>
                                             <div class="text-display-2 mt-2" style=" font-weight: 450; color: #F09532">Rp. 50.000 ,-</div>
                                             <div class="row mt-5">
-                                                <div class="col-8">
+                                                <div class="col-8 " >
                                                     <div class="text-display text-center font-weight-bold text-light d-flex align-items-end justify-content-center pt-1 pb-1" style="background-color:#363636; cursor:pointer;">Buy Now
                                                     </div>
                                                 </div>

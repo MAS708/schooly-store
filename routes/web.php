@@ -18,6 +18,8 @@ Route::get('/index', 'IndexController@index')->name('index');
 Route::view('/search', 'search');
 Route::view('/detail', 'detail');
 Route::view('/addcart', 'addcart');
+Route::view('/cekout', 'cekout');
+Route::view('/whistlist', 'whistlist');
 
 
 // Auth::routes();
