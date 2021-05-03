@@ -60,7 +60,7 @@ class IndexController extends Controller
 
     public function highest(){
         $productHighest = Product::orderBy('price', 'desc')->paginate(25);
-        return view('products', [  'allProducts' => $productHighest, 'search' => 'Produk Termahal'] );
+        return view('products', [  'allProducts' => $productHighest, 'search' => 'Produk Tertinggi'] );
     }
 
     public function latest(){

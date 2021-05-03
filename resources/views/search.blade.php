@@ -60,7 +60,7 @@
                                         <div class="card-footer bg-white border-0 ">
                                             <div class="row">
                                                 <div class="col">
-                                                    <a href="#">
+                                                    <a href="{{ route('product.detail', $product->id) }}">
                                                         <div class="text-buy-now border border-dark  d-flex align-items-center justify-content-center" > BUY NOW</div>
                                                     </a>
                                                 </div>
