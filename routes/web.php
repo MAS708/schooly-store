@@ -13,9 +13,31 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::redirect('/', '/home');
+Route::redirect('/', '/index');
+Route::get('/index', 'IndexController@index')->name('index');
+Route::get('/searcher', 'IndexController@searcher')->name('searcher');
+Route::get('/products/highest', 'IndexController@highest')->name('products.highest');
+Route::get('/products/latest', 'IndexController@latest')->name('products.latest');
+Route::get('/products/hottest', 'IndexController@hottest')->name('products.hottest');
+Route::get('/detail/{product}', 'IndexController@detail')->name('product.detail');
 
-Auth::routes();
+Route::view('/wishlist', 'wishlist');
+
+// Auth::routes();
+// Authentication Routes...
+Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+Route::post('login', 'Auth\LoginController@login');
+Route::post('logout', 'Auth\LoginController@logout')->name('logout');
+
+// Registration Routes...
+Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
+Route::post('register', 'Auth\RegisterController@register');
+
+// Password Reset Routes...
+Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
+Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/indexed', 'IndexController@index')->name('index');
@@ -29,6 +51,8 @@ Route::get('/cart/checkout', 'CartController@checkout')->name('cart.checkout')->
 Route::resource('orders', 'OrderController')->middleware('auth');
 
 Route::resource('shops','ShopController')->middleware('auth');
+
+// Route::get('/product/{product}','ProductController@index')->name('product.detail')->middleware('auth');
 
 // Route::group(['prefix' => 'admin'], function () {
 //     Voyager::routes();
