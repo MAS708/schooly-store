@@ -1,9 +1,5 @@
 
- .asd{
-    padding: none !important;
-    background-color: transparent;
- }
- /*--------------------------------------------------------------
+  /*--------------------------------------------------------------
   # Disable aos animation delay on mobile devices
   --------------------------------------------------------------*/
   @media screen and (max-width: 768px) {
@@ -280,8 +276,6 @@
     color: #F09832;
     }
 
-
-
   /*items*/
 
   /*Header Card Hidden*/
@@ -316,6 +310,11 @@
   .box-img-items-2{
     width: 455px;
     height: 475px;
+    background: #fff6e3;
+  }
+  .box-img-items-3{
+    width: 180px;
+    height: 180px;
     background: #fff6e3;
   }
   .img-items{

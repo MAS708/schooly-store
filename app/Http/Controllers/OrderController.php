@@ -87,7 +87,7 @@ class OrderController extends Controller
         $order->generateSubOrders();
 
         \Cart::session(auth()->id())->clear();
-        return redirect()->route('home')->withMessage('Order has been placed');
+        return redirect()->route('index')->withMessage('Order has been placed');
     }
 
     /**

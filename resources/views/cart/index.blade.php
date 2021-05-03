@@ -23,7 +23,7 @@
                         <div class="produk-addcart-index mb-5">
 
                             <div class="row ml-2">
-                                <div class="col-1 col-md-1 d-flex justify-content-start p-0">
+                                <div class="col-1 d-flex justify-content-start p-0">
                                     <div class="icon-addcart d-flex align-items-center">
                                         <i class="fas fa-bookmark fa-2x d-none d-md-block"></i>
                                         <i class="fas fa-bookmark fa-lg d-md-none"></i>

@@ -23,7 +23,7 @@
                                 </div>
                                 <div class="col-6 d-flex justify-content-start">
                                     <div class="detail-produk d-flex flex-column ml-2">
-                                        <div class="box-text-display-addcart-index">
+                                        <div class="box-text-display-detail-index">
                                             <div class="text-display-2 text-dark" style=" font-weight: 350;" >{{ $products->name }}</div>
                                             <div class="text-display-2 mt-2" style=" font-weight: 450; color: #F09532">Rp. {{number_format($products->price, 2)}} ,-</div>
                                             <div class="row mt-5">
