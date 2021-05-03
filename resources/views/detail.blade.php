@@ -9,7 +9,7 @@
     </section>
     <!-- End Hero -->
 
-    <!-- ======= barang Section ======= -->
+    <!-- ======= barang Section ======= ------>
     <section id="Detail Produk" class="barang">
             <div class="margin mt-5">
                     <div class="col-xl-12">
