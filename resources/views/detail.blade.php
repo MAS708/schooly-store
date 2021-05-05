@@ -25,12 +25,21 @@
                                     <div class="detail-produk d-flex flex-column ml-2">
                                         <div class="box-text-display-detail-index">
                                             <div class="text-display-2 text-dark" style=" font-weight: 350;" >Bakmi Mevah asdddddd</div>
+                                            <div class="text-display-3 mt-2 d-flex align-items-center" style=" font-weight: 500; color: #AAAAAA;">3.4<i class="fas fa-star fa-xs ml-2 " style="color:#FFEC40"></i></div>
                                             <div class="text-display-2 mt-2" style=" font-weight: 450; color: #F09532">Rp. 50.000 ,-</div>
-                                            <div class="row mt-5">
-                                                <div class="col-8 " >
-                                                    <div class="text-display text-center font-weight-bold text-light d-flex align-items-end justify-content-center pt-1 pb-1" style="background-color:#363636; cursor:pointer;">Buy Now
+
+                                            <div class="row mt-4">
+                                                <div class="col-12 col-md-5 col-lg-6">
+                                                    <div class="text-display text-center font-weight-bold text-light d-flex justify-content-center pt-1 pb-1" style="background-color:#363636; cursor:pointer;">Buy Now
                                                     </div>
                                                 </div>
+                                                <!--Button Whistlist-->
+                                                <!--d-none(script hilang)-->
+                                                <div class="col-12 col-md-7 col-lg-5 d-none">
+                                                    <div class="text-display text-center font-weight-bold text-dark d-flex justify-content-center pt-1 pb-1 border border-dark" style= "cursor:pointer;">Add to Whistlist
+                                                    </div>
+                                                </div>
+                                                <!--Button Whistlist-->
                                             </div>
                                             <div class="deskripsi d-none d-md-block ">
                                                 <div class="text-display-3 text-dark mt-4" style="font-weight: 500;" >Deskripsi</div>

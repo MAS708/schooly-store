@@ -20,6 +20,7 @@ Route::view('/detail', 'detail');
 Route::view('/addcart', 'addcart');
 Route::view('/cekout', 'cekout');
 Route::view('/whistlist', 'whistlist');
+Route::view('/addshop', 'addshop');
 
 
 // Auth::routes();
