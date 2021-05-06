@@ -1,24 +1,79 @@
-@extends('layouts.app')
-
+@extends('layouts.indexed')
 
 @section('content')
-<h2>Submit your shop</h2>
 
-<form action="{{route('shops.store')}}" method="post">
-    @csrf
+  <main id="main">
 
-    <div class="form-group">
-        <label for="name">Name of Shop</label>
-        <input type="text" class="form-control" name="name" id="" aria-describedby="helpId" placeholder="">
-    </div>
+    <!-- ======= Banner-atas Section ======= -->
+    <section id="banner-atas" class="banner-atas">
+    </section>
+    <!-- End Hero -->
 
-    <div class="form-group">
-        <label for="description">Description</label>
-        <textarea class="form-control" name="description" id="" rows="3"></textarea>
-    </div>
+    <!-- ======= input Section ======= -->
+    <form action="{{route('shops.store')}}" method="post">
+        @csrf
+    <section id="Input Data" class="input">
+        <!-- ======= Nama dan No web ======= -->
+        <div class="margin mt-5">
+            <div class="row">
+                <div class="col-1"></div>
+                    <div class="col-10">
+                        <div class="text-hasil-search font-weight-light text-secondary text-center">Nama Toko Anda</div>
 
-    <button type="submit" class="btn btn-primary">Submit</button>
+                            <div class="input-group">
+                                <input type="text"  name="name" class="form-control text-center mt-2" style="background-color:#FFF6E3; border:none;" aria-label="namatoko" aria-describedby="validatedInputGroup" required>
+                            </div>
 
-</form>
+                    </div>
+                </div>
+                <div class="col-1"></div>
+            </div>
+        </div>
+        <div class="margin mt-5">
+            <div class="row">
+                <div class="col-1"></div>
+                    <div class="col-10">
+                        <div class="text-hasil-search font-weight-light text-secondary text-center">Deskripsi Toko Anda</div>
+
+                            <div class="input-group">
+                                <textarea type="text" name="description" class="form-control text-center mt-2" style="background-color:#FFF6E3; border:none;" id="exampleFormControlTextarea1" aria-label="deskripsishop" rows="6" aria-describedby="validatedInputGroup" required> </textarea>
+                            </div>
+
+                    </div>
+                </div>
+                <div class="col-1"></div>
+            </div>
+        </div>
+
+
+    </section>
+    <!-- End barang Section -->
+
+    <!-- ======= CheckOut Section ======= -->
+    <section id="box-cekout" class="box-cekout p-0 mb-0">
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-10">
+                <div class="row d-flex justify-content-end">
+                    <div class="col-8 col-md-4">
+                        <div class="text-display text-center font-weight-bold text-dark d-flex align-items-end justify-content-center  pt-1 pb-1" style="background-color:#FFF6E3; cursor:pointer">
+                            <button type="submit" class="btn btn-link p-0 text-dark font-weight-bold" style="background-color:#FFF6E3; cursor:pointer" >Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1"></div>
+        </div>
+
+        <!--Border-->
+        <div class="row mt-5">
+            <div class="col-1"></div>
+            <div class="col-10 d-flex justify-content-center border-top border-secondary"></div>
+            <div class="col-1"></div>
+        </div>
+    </section>
+    <!-- End Checkout -->
+    </form>
+  </main>
 
 @endsection

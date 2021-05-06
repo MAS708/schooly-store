@@ -57,8 +57,13 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link d-inline-block align-top p-0 m-0" href="{{ route('cart.index') }}">
+                            @auth
+                                <a class="nav-link p-0 m-0" href="{{ route('cart.index') }}">
                                 <i class="fas fa-shopping-cart text-success fa-2x"></i>
+                            @else
+                                <a class="nav-link p-0 m-0" href="{{ route('login') }}">
+                                <i class="fas fa-shopping-cart text-success fa-2x"></i>
+                            @endauth
                                 <div class="badge badge-danger">
                                     @auth
                                     {{ \Cart::session(auth()->id())->getContent()->count() }}

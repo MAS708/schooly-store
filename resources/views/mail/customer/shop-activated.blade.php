@@ -3,7 +3,7 @@
 
 Your shop is now active
 
-@component('mail::button', ['url' => url('/seller/shops'])
+@component('mail::button', ['url' => url('/seller/shops')])
 Visit Your Shop
 @endcomponent
 

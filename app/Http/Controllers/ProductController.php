@@ -13,9 +13,11 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($product)
     {
-        //
+        //Show Products
+        $products = Product::find($product);
+        return view('detail', compact('products'));
     }
 
     /**
@@ -45,9 +47,8 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $product)
+    public function show($product)
     {
-        return view('Products_detail', compact('product'));
     }
 
     /**
