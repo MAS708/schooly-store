@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,12 +19,18 @@ Route::redirect('/', '/home');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/coba', 'HomeController@coba');
+Route::get('/produk/{product}', 'ProductController@show')->name('product.details');
 
 Route::get('/add-to-cart/{product}', 'CartController@add')->name('cart.add')->middleware('auth');
 Route::get('/cart', 'CartController@index')->name('cart.index')->middleware('auth');
 Route::get('/cart/destroy/{itemId}', 'CartController@destroy')->name('cart.destroy')->middleware('auth');
 Route::get('/cart/update/{itemId}', 'CartController@update')->name('cart.update')->middleware('auth');
 Route::get('/cart/checkout', 'CartController@checkout')->name('cart.checkout')->middleware('auth');
+Route::get('/wishlist', 'WishlistController@index')->name('wishlist')->middleware('auth');
+Route::post('/addToWishlist','WishlistController@add')->name('wishlist.add')->middleware('auth');
+Route::get('/wishlist/{id}', 'WishlistController@destroy')->name('remove.wishlist')->middleware('auth');
+
 
 Route::resource('orders', 'OrderController')->middleware('auth');
 
@@ -39,3 +46,4 @@ Route::group(['prefix' => 'seller'], function () {
     Route::get('/order/delivered/{suborder}', 'SubOrderController@markDelivered')->name('order.delivered');
     Route::get('/order/canceled/{suborder}', 'SubOrderController@markCanceled')->name('order.canceled');
 });
+

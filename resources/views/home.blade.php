@@ -13,12 +13,13 @@
                 <div class="card-body">
                     <h4 class="card-title">{{$product->name}}</h4>
                     <p class="card-text">{{$product->description}}</p>
-                    <h3>$ {{$product->price}}</h3>
+                    <h3>{{$product->price}}</h3>
                     <p class="card-text">{{$product->shop->owner->name ?? 'n/a'}}</p>
 
                 </div>
                 <div class="card-body">
                     <a href="{{ route('cart.add', $product->id) }}" class="card-link">Add to Cart</a>
+                    <a href="{{ route('product.details', $product->id) }}" class="card-link">Detail Produk</a>
                 </div>
             </div>
         </div>

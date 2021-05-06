@@ -28,4 +28,9 @@ class HomeController extends Controller
 
         return view('home', ['allProducts' => $products]);
     }
+
+    public function coba()
+    {
+        return view('layouts/indexed');
+    }
 }

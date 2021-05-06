@@ -17,6 +17,8 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -38,14 +40,16 @@
                         <li class="nav-item">
                             @auth
                             @if(auth()->user()->hasRole('seller'))
-                            <a class="nav-link" href="{{ route('voyager.dashboard') }}">Go to Your Shop</a>
+                            <a class="nav-link d-inline-block align-top" href="{{ route('voyager.dashboard') }}">Go to Your Shop</a>
                             @elseif(auth()->user()->hasRole('admin'))
-                            <a class="nav-link" href="{{ route('voyager.dashboard') }}">Admin Panel</a>
+                            <a class="nav-link d-inline-block align-top" href="{{ route('voyager.dashboard') }}">Admin Panel</a>
                             @elseif(auth()->user()->hasRole('user'))
-                            <a class="nav-link" href="{{ route('shops.create') }}">Open Your Shop</a>
+                            <a class="nav-link d-inline-block align-top" href="{{ route('shops.create') }}">Open Your Shop</a>
+                            <a class="nav-link d-inline-block align-top" href="{{ route('wishlist') }}">
+                                <i class="fa fa-star"></i>Wishlist<span>({{ App\Wishlist::where('user_id', auth()->user()->id)->count() }})</span>
                             @endif
                             @else
-                            <a class="nav-link" href="{{ route('login') }}">Open Your Shop</a>
+                            <a class="nav-link d-inline-block align-top" href="{{ route('login') }}">Open Your Shop</a>
                             @endauth
                         </li>
                     </ul>
@@ -53,7 +57,7 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link p-0 m-0" href="{{ route('cart.index') }}">
+                            <a class="nav-link d-inline-block align-top p-0 m-0" href="{{ route('cart.index') }}">
                                 <i class="fas fa-shopping-cart text-success fa-2x"></i>
                                 <div class="badge badge-danger">
                                     @auth
