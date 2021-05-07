@@ -96,7 +96,7 @@
                         <div class="row d-flex justify-content-end">
                             <div class="col-8 col-md-4">
                                 <div class="text-display text-center font-weight-bold text-dark d-flex align-items-end justify-content-center  pt-1 pb-1" style="background-color:#FFF6E3; cursor:pointer">
-                                    <button type="submit" class="btn btn-link p-0 text-dark font-weight-bold">CheckOut</button>
+                                    <span><button type="submit" class="btn btn-link p-0 text-dark font-weight-bold">CheckOut</button></span>
                                 </div>
                             </div>
                         </div>

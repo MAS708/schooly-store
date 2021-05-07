@@ -31,18 +31,29 @@
 
                                             <div class="row mt-4">
                                                 <div class="col-12 col-md-5 col-lg-6">
-                                                    <a href="{{ route('cart.add', $products->id) }}">
-                                                    <div class="text-display text-center font-weight-bold text-light d-flex justify-content-center pt-1 pb-1" style="background-color:#363636; cursor:pointer;">Buy Now
-                                                    </div>
+                                                    <a href="{{ route('cart.add', $products->id) }}" class="text-display text-center font-weight-bold text-light d-flex justify-content-center pt-1 pb-1" style="background-color:#363636; cursor:pointer;">Buy Now
+                                                    </a>
                                                 </div>
+
+                                                <?php
+                                                $wishlistData = DB::table('wishlist')->rightJoin('products', 'wishlist.pro_id', '=', 'products.id')
+                                                    ->where('wishlist.pro_id', '=', $products->id)->get();
+                                                $count = App\Wishlist::where(['pro_id' => $products->id])->count();
+
+                                                if ($count == "0") {
+                                                ?>
                                                 <!--Button Whistlist-->
                                                 <!--d-none(script hilang)-->
-                                                <div class="col-12 col-md-7 col-lg-5 d-none">
-                                                    <a href="{{ route('cart.add', $products->id) }}">
-                                                    <div class="text-display text-center font-weight-bold text-dark d-flex justify-content-center pt-1 pb-1 border border-dark" style= "cursor:pointer;">Add to Whistlist
-                                                    </div>
-                                                </div>
-                                                <!--Button Whistlist-->
+                                                            <div class="col-12 col-md-7 col-lg-5">
+                                                                <form action="{{ route('wishlist.add')}}" method="post" role="form">
+                                                                    <input type="hidden" name="_token" value={{csrf_token()}}>
+                                                                    <input type="hidden" value="{{$products->id}}" name="pro_id">
+                                                                    <input class="text-display bg-transparent text-center font-weight-bold text-dark d-flex justify-content-center pt-1 pb-1 border border-dark " style= "cursor:pointer;" type="submit" value=" Add to Wishlist">
+                                                                </form>
+                                                                <?php } else { ?>
+                                                                    <div class="text-display bg-transparent text-center font-weight-bold d-flex justify-content-center pt-1 pb-1 " style=" font-weight: 500; color: #AAAAAA;" >Has been added to wishlist!</div>
+                                                                <?php } ?>
+                                                            </div>
                                             </div>
 
                                             <div class="deskripsi d-none d-md-block ">
@@ -123,7 +134,6 @@
                                         <div class="card-footer bg-white border-0 ">
                                             <div class="row">
                                             <div class="col">
-                                                {{-- <a href="{{ route('cart.add', $product->id) }}"> --}}
                                                 <a href="{{ route('cart.add', $r->id) }}">
                                                 <div class="text-buy-now border border-dark  d-flex align-items-center justify-content-center" > BUY NOW</div>
                                                 </a>
@@ -154,13 +164,8 @@
                 <div class="col-1"></div>
                 </div>
             </div>
-            </section>
+        </section>
     <!-- End Clients Section -->
 
-
-
-
-
   </main>
-
 @endsection

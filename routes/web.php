@@ -22,7 +22,7 @@ Route::get('/products/latest', 'IndexController@latest')->name('products.latest'
 Route::get('/products/hottest', 'IndexController@hottest')->name('products.hottest');
 Route::get('/detail/{product}', 'IndexController@detail')->name('product.detail');
 
-Route::view('/wishlist', 'wishlist');
+// Route::view('/wishlist', 'wishlist');
 
 // Auth::routes();
 // Authentication Routes...

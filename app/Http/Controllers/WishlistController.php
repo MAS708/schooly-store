@@ -17,11 +17,10 @@ class WishlistController extends Controller
     //view for wishlist
     public function index()
     {
-        $products= DB::table('wishlist')
-        ->leftJoin('products', 'wishlist.pro_id', '=', 'products.id')
+        $products= Wishlist::leftJoin('products', 'wishlist.pro_id', '=', 'products.id')
         ->where('user_id', Auth::user()->id)
         ->get();
-        
+
         return view('wishlist', compact('products'));
     }
 
@@ -32,7 +31,7 @@ class WishlistController extends Controller
      */
     public function create()
     {
-        
+
     }
 
     /**
@@ -90,9 +89,9 @@ class WishlistController extends Controller
     {
         // return
         DB::table('wishlist')->where('pro_id', $id)->delete();
-        
+
         return redirect()->route('wishlist');
-    } 
+    }
 
     public function add (Request $request)
     {
