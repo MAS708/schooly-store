@@ -74,7 +74,7 @@
                             <form action="{{ route('remove.wishlist', $pro->id) }}">
                                 <div class="delete d-none d-md-block" style="color: #F03939; cursor:pointer;">
                                         <span>
-                                            <button type="submit" class="btn btn-link p-0 text-dark font-weight-bold"><i class="far fa-trash-alt fa-2x"></i></button>
+                                            <button type="submit" class=" btn btn-link p-0 text-dark font-weight-bold"><i class="far fa-trash-alt fa-2x" style="color: #F03939; cursor:pointer;"></i></button>
                                         </span>
                                 </div>
                             </form>
@@ -90,7 +90,7 @@
                                                 <div class="toko" style="cursor:pointer;">
                                                     <div class="row d-flex align-items-center">
                                                         <i class="fas fa-store-alt fa-sm" ></i>
-                                                        <div class="text-display ml-1" >Toko Kemana Saha </div>
+                                                        <div class="text-display ml-1" >{{$pro->product->shop->name ?? 'n/a'}}</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -112,11 +112,13 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-2 d-flex align-items-center justify-content-end">
-                                                    <div class="delete p-2" style="color: #F03939; cursor:pointer;">
-                                                        <div class="row d-flex align-items-center">
-                                                            <i class="far fa-trash-alt fa-md"></i>
+                                                    <form action="{{ route('remove.wishlist', $pro->id) }}">
+                                                        <div class="delete p-2" style="color: #F03939; cursor:pointer;">
+                                                                <span>
+                                                                    <button type="submit" class="btn btn-link p-0 text-dark font-weight-bold row d-flex align-items-center"> <i class="far fa-trash-alt fa-md" style="color: #F03939; cursor:pointer;"></i></button>
+                                                                </span>
                                                         </div>
-                                                    </div>
+                                                    </form>
                                                 </div>
                                             </div>
                                         </div>

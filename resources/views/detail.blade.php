@@ -68,7 +68,7 @@
                                 <div class="col-12 d-flex justify-content-center" >
                                     <div class="deskripsi d-md-none ">
                                         <div class="text-display-3 text-dark mt-4" style="font-weight: 500;" >Deskripsi</div>
-                                        <div class="text-display text-justify text-secondary mt-4">{{$products->description}}.</div>
+                                        <div class="text-display text-justify text-secondary mt-4">{{strip_tags($products->description)}}.</div>
                                     </div>
                                 </div>
                             </div>
