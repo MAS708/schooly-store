@@ -125,6 +125,7 @@
                                             @else
                                             <div class="menu mt-2" style="cursor: pointer"><a class ="dropdown-item" href="{{ route('index') }}"><i class="fas fa-user-circle mr-2"></i>{{ Auth::user()->name }}</a></div>
                                         @endguest
+                                        <div class="menu mt-2" style="cursor: pointer"><a class ="dropdown-item" href="{{ route('wishlist') }}"><i class="fas fa fa-heart mr-2"></i>Wishlist</a></div>
                                         <div class="menu mt-2" style="cursor: pointer"><a class="dropdown-item" href="{{ route('logout') }}"
                                                 onclick="event.preventDefault();
                                                                 document.getElementById('logout-form').submit();"><i class="fas fa-sign-out-alt mr-2"></i>
@@ -181,23 +182,26 @@
                     </form>
                 </div>
                 <div class="menu d-lg-none ml-2 ">
-                    <a href="{{ route('index') }}"><i class="fa fa-angle-right mr-2"></i>Home</a>
+                    <a href="{{ route('index') }}"><i class="fa fa-home mr-2"></i>Home</a>
+                </div>
+                <div class="menu d-lg-none ml-2">
+                    <a href="{{ route('wishlist') }}"><i class="fas fa fa-heart mr-2"></i>Wishlist</a>
                 </div>
                 <div class="menu d-lg-none ml-2 ">
                     @auth
                         @if(auth()->user()->hasRole('seller'))
-                            <a href="{{ route('voyager.dashboard') }}"><i class="fas fa-angle-right mr-2"></i>Go to Your Shop</a>
+                            <a href="{{ route('voyager.dashboard') }}"><i class="fas fa-briefcase mr-2"></i>Go to Your Shop</a>
                             @elseif(auth()->user()->hasRole('admin'))
-                            <a href="{{ route('voyager.dashboard') }}"><i class="fas fa-angle-right mr-2"></i>Admin Panel</a>
+                            <a href="{{ route('voyager.dashboard') }}"><i class="fas fa-briefcase mr-2"></i>Admin Panel</a>
                             @elseif(auth()->user()->hasRole('user'))
-                            <a href="{{ route('shops.create') }}"><i class="fas fa-angle-right mr-2"></i>Open Your Shop</a>
+                            <a href="{{ route('shops.create') }}"><i class="fas fa-briefcase mr-2"></i>Open Your Shop</a>
                             @endif
                             @else
-                            <a href="{{ route('login') }}"><i class="fas fa-angle-right mr-2"></i>Open Your shop</a>
+                            <a href="{{ route('login') }}"><i class="fas fa-briefcase mr-2"></i>Open Your shop</a>
                     @endauth
                 </div>
                 <div class="menu d-lg-none ml-2 ">
-                    <a href="{{ route('cart.index')}}"><i class="fas fa-angle-right mr-2"></i>Shopping Bag</a>
+                    <a href="{{ route('cart.index')}}"><i class="fas fa-shopping-cart mr-2"></i>Shopping Bag</a>
                 </div>
             </nav>
         </div>
