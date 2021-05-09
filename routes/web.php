@@ -21,7 +21,9 @@ Route::view('/addcart', 'addcart');
 Route::view('/cekout', 'cekout');
 Route::view('/whistlist', 'whistlist');
 Route::view('/addshop', 'addshop');
-
+Route::view('/nocart', 'nocart');
+Route::view('/nowhistlist', 'nowhistlist');
+Route::view('/404', '404');
 
 // Auth::routes();
 // Authentication Routes...
