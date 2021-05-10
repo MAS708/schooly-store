@@ -52,7 +52,7 @@ class IndexController extends Controller
     public function detail($product)
     {
         //Show Products
-        $products = Product::find($product);
+        $products = Product::findOrFail($product);
         $productsRandom = Product::all()->random(20);
         return view('detail', [ 'products' => $products,
                                 'random' => $productsRandom]);

@@ -16,4 +16,9 @@ class Shop extends Model
     {
         return $this->hasMany(Product::class, 'shop_id');
     }
+
+    public function wishlist()
+    {
+        return $this->hasOne(Wishlist::class, 'pro_id');
+    }
 }

@@ -11,6 +11,24 @@
 
     <!-- ======= barang Section ======= -->
     <section id="Produk" class="barang">
+
+        <?php if ($cartItems->isEmpty()) { ?>
+            <div class="margin m-5">
+                <div class="row d-flex justify-content-center">
+                    <img src="{{asset('assets/img/nocart.svg')}}" alt="img-fluid" class="img-fluid">
+                </div>
+                <div class="row d-flex justify-content-center mt-4 mb-5">
+                    <img src="{{asset('assets/img/textnocart.svg')}}" alt="img-fluid" class="img-fluid">
+                </div>
+                <div class="row d-flex justify-content-center">
+                    <a href="{{route('index')}}">
+                        <img src="{{asset('assets/img/buttonnocart.svg')}}" alt="img-fluid" class="img-fluid">
+                    </a>
+                </div>
+            </div>
+        <?php  } else { ?>
+
+
         <!--Border-->
         <div class="row mt-4">
             <div class="col-1"></div>
@@ -82,6 +100,7 @@
                         </div>
                 </div>
              @endforeach
+
             </div>
         <!--Border-->
         <div class="row mt-4">
@@ -121,7 +140,7 @@
         </div>
     </section>
     <!-- End Hero -->
-
+    <?php } ?>
 
 
 
