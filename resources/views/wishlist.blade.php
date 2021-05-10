@@ -13,10 +13,18 @@
     <section id="Produk" class="barang">
 
         <?php if ($products->isEmpty()) { ?>
-            <div class="term" style="margin:5%;">
-                <h4>
-                    <center><b>You Have No Wishlist Yet</b></center>
-                </h4>
+            <div class="margin m-5">
+                <div class="row d-flex justify-content-center">
+                    <img src="{{asset('assets/img/nowhistlist.svg')}}" alt="img-fluid" class="img-fluid">
+                </div>
+                <div class="row d-flex justify-content-center mt-4 mb-5">
+                    <img src="{{asset('assets/img/textnowhistlist.svg')}}" alt="img-fluid" class="img-fluid">
+                </div>
+                <div class="row d-flex justify-content-center">
+                    <a href="{{route('index')}}">
+                        <img src="{{asset('assets/img/buttonnowhistlist.svg')}}" alt="img-fluid" class="img-fluid">
+                    </a>
+                </div>
             </div>
         <?php  } else { ?>
 
