@@ -74,9 +74,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col border-right border-left">
+                    <div class="col d-none d-lg-block border-right border-left">
                         <div class="row mt-3 ">
-                            <div class="menu ml-3 d-none d-lg-block">
+                            <div class="menu m-auto d-none d-lg-block" style="text-align: center">
                                 @auth
                                     @if(auth()->user()->hasRole('seller'))
                                     <a href="{{ route('voyager.dashboard') }}">Go to Your Shop</a>
@@ -134,6 +134,7 @@
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                             @csrf
                                         </form></div>
+                                        <div class="menu mt-2" style="cursor: pointer"><a class ="dropdown-item" href="{{ route('index') }}"><i class="fas fa-door-open mr-2"></i>Landing Page</a></div>
                                     @endguest
                                 </div>
                             </div>
@@ -258,33 +259,27 @@
                     </div>
                     </div>
                     <div class="col-lg-3 col-md-6 footer-links">
-                    <h4>Our Services</h4>
+                    <h4>Schooly Store Services</h4>
                     <ul>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Check Out</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Open Your Shop</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Shopping Bag</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Admin</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Wishlist</a></li>
                     </ul>
                     </div>
                     <div class="col-lg-3 col-md-6 footer-links">
-                    <h4>Our Services</h4>
+                    <h4>Schooly Services</h4>
                     <ul>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Attendance</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Point+</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Schooly Store</a></li>
                     </ul>
                     </div>
                     <div class="col-lg-3 col-md-6 footer-links">
-                    <h4>Our Services</h4>
+                    <h4>Schooly Main Page</h4>
                     <ul>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Landing Page</a></li>
                     </ul>
                     </div>
                 </div>

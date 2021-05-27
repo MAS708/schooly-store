@@ -18,8 +18,8 @@
 
                 </div>
                 <div class="card-body">
-                    <a href="{{ route('cart.add', $product->id) }}" class="card-link">Add to Cart</a>
-                    <a href="{{ route('product.details', $product->id) }}" class="card-link">Detail Produk</a>
+                    <a href="#" class="card-link">Add to Cart</a>
+                    <a href="#" class="card-link">Detail Produk</a>
                 </div>
             </div>
         </div>
