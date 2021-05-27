@@ -74,9 +74,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col border-right border-left">
+                    <div class="col d-none d-lg-block border-right border-left">
                         <div class="row mt-3 ">
-                            <div class="menu ml-3 d-none d-lg-block">
+                            <div class="menu m-auto d-none d-lg-block" style="text-align: center">
                                 @auth
                                     @if(auth()->user()->hasRole('seller'))
                                     <a href="{{ route('voyager.dashboard') }}">Go to Your Shop</a>
