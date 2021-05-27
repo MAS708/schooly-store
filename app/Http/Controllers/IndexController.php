@@ -25,11 +25,13 @@ class IndexController extends Controller
     public function index()
     {
         $productLatest = Product::take(20)->latest()->get();
-        $productsRandom = Product::all()->random(20);
+        $productsRandom = Product::inRandomOrder()->limit(20)->get();
         $productHighest = Product::take(20)->orderBy('price', 'desc')->get();
         return view('index', [  'latest' => $productLatest,
                                 'random' => $productsRandom,
                                 'highest' => $productHighest ]);
+
+
     }
 
     public function searcher(Request $request)
@@ -53,7 +55,7 @@ class IndexController extends Controller
     {
         //Show Products
         $products = Product::findOrFail($product);
-        $productsRandom = Product::all()->random(20);
+        $productsRandom = Product::inRandomOrder()->limit(20)->get();
         return view('detail', [ 'products' => $products,
                                 'random' => $productsRandom]);
     }

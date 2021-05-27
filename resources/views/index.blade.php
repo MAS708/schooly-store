@@ -64,6 +64,12 @@
                 </div>
             </div>
             <div class="margin mt-4">
+                <?php if ($latest->isEmpty()) { ?>
+                    <div class="margin m-5" style="text-align: center">
+                       <b>-!---- KOSONG ----!-</b>
+                    </div>
+                <?php  } else { ?>
+
                 <div class="row">
                     <div class="col-xl-12 ml-5 pr-0">
                         <div class="owl-carousel barang-carousel ">
@@ -116,9 +122,14 @@
                             @endforeach
                         <!-- ITEM CARD NEW -->
 
+
+
+
                         </div>
                     </div>
                 </div>
+
+                <?php } ?>
             </div>
             <div class="row mt-4">
                 <div class="col-xl-12">
@@ -134,7 +145,11 @@
                 <div class="col-1"></div>
             </div>
             </div>
+
+
         </section>
+
+
     <!-- End Clients Section -->
 
     <!-- ======= barang Section ======= -->
@@ -148,60 +163,70 @@
             </div>
             </div>
             <div class="margin mt-4">
-            <div class="row">
-                <div class="col-xl-12 ml-5 pr-0">
-                    <div class="owl-carousel barang-carousel ">
 
-                        <!-- ITEM CARD NEW -->
-                            @foreach ($random as $product)
+                <?php if ($random->isEmpty()) { ?>
+                    <div class="margin m-5" style="text-align: center">
+                        <b>-!---- KOSONG ----!-</b>
+                    </div>
+                <?php  } else { ?>
 
-                            <div class="col d-flex justify-content-center p-0">
-                                <div class="box-items ">
-                                    <div class="box-items-price-top ">
-                                    <div class="d-flex justify-content-end">
-                                        <div class="text-items-price-top border border-dark">Rp.{{number_format($product->price, 2)}}</div>
-                                    </div>
-                                    </div>
-                                    <div class="box-img-items d-flex align-items-center justify-content-center">
-                                    <img src="{{ Voyager::image( $product->cover_img ) }}" alt="img-fluid" class="img-items">
-                                    </div>
-                                    <div class="box-footer">
-                                    <div class="card-footer bg-white border-0">
-                                        <div class="row">
-                                        <div class="col">
-                                            <div class="text-items-barang text-secondary text-left d-flex justify-content-start">{{$product->name}}</div>
+                <div class="row">
+                    <div class="col-xl-12 ml-5 pr-0">
+                        <div class="owl-carousel barang-carousel ">
+
+                            <!-- ITEM CARD NEW -->
+                                @foreach ($random as $product)
+
+                                <div class="col d-flex justify-content-center p-0">
+                                    <div class="box-items ">
+                                        <div class="box-items-price-top ">
+                                        <div class="d-flex justify-content-end">
+                                            <div class="text-items-price-top border border-dark">Rp.{{number_format($product->price, 2)}}</div>
                                         </div>
                                         </div>
-                                        <div class="row">
-                                        <div class="col">
-                                            <div class="text-items-price-bottom d-flex justify-content-start">Rp.{{number_format($product->price, 2)}}</div>
+                                        <div class="box-img-items d-flex align-items-center justify-content-center">
+                                        <img src="{{ Voyager::image( $product->cover_img ) }}" alt="img-fluid" class="img-items">
                                         </div>
-                                        <div class="col">
-                                            <div class="text-items-rating d-flex align-items-center justify-content-end">5<small><img src="assets/img/star.svg" alt="" class="img-fluid star"></small></div>
+                                        <div class="box-footer">
+                                        <div class="card-footer bg-white border-0">
+                                            <div class="row">
+                                            <div class="col">
+                                                <div class="text-items-barang text-secondary text-left d-flex justify-content-start">{{$product->name}}</div>
+                                            </div>
+                                            </div>
+                                            <div class="row">
+                                            <div class="col">
+                                                <div class="text-items-price-bottom d-flex justify-content-start">Rp.{{number_format($product->price, 2)}}</div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="text-items-rating d-flex align-items-center justify-content-end">5<small><img src="assets/img/star.svg" alt="" class="img-fluid star"></small></div>
+                                            </div>
+                                            </div>
                                         </div>
                                         </div>
-                                    </div>
-                                    </div>
-                                    <div class="box-footer2">
-                                    <div class="card-footer bg-white border-0 ">
-                                        <div class="row">
-                                        <div class="col">
-                                            {{-- <a href="{{ route('cart.add', $product->id) }}"> --}}
-                                            <a href="{{ route('cart.add', $product->id) }}">
-                                            <div class="text-buy-now border border-dark  d-flex align-items-center justify-content-center" > BUY NOW</div>
-                                            </a>
+                                        <div class="box-footer2">
+                                        <div class="card-footer bg-white border-0 ">
+                                            <div class="row">
+                                            <div class="col">
+                                                {{-- <a href="{{ route('cart.add', $product->id) }}"> --}}
+                                                <a href="{{ route('cart.add', $product->id) }}">
+                                                <div class="text-buy-now border border-dark  d-flex align-items-center justify-content-center" > BUY NOW</div>
+                                                </a>
+                                            </div>
+                                            </div>
                                         </div>
                                         </div>
-                                    </div>
                                     </div>
                                 </div>
-                            </div>
-                            @endforeach
-                        <!-- ITEM CARD NEW -->
+                                @endforeach
+                            <!-- ITEM CARD NEW -->
 
+                        </div>
                     </div>
                 </div>
-            </div>
+
+                <?php } ?>
+
             </div>
             <div class="row mt-4">
             <div class="col-xl-12">
@@ -218,6 +243,7 @@
             </div>
         </div>
         </section>
+
     <!-- End Clients Section -->
 
     <!-- ======= Banner-bawah Section ======= -->
@@ -259,15 +285,23 @@
 
     <!-- ======= barang Section ======= -->
         <section id="barang" class="barang ">
+
         <div class="container-fluid" data-aos="zoom-in">
-            <div class="row">
-            <div class="col-xl-12">
-                <div class="box-text-display d-flex justify-content-start">
-                <div class="text-display">Pilihan Tertinggi</div>
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="box-text-display d-flex justify-content-start">
+                        <div class="text-display">Pilihan Tertinggi</div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            </div>
+
             <div class="margin mt-4">
+                <?php if ($highest->isEmpty()) { ?>
+                    <div class="margin m-5" style="text-align: center">
+                        <b>-!---- KOSONG ----!-</b>
+                    </div>
+                <?php  } else { ?>
+
                 <div class="row">
                     <div class="col-xl-12 ml-5 pr-0">
                         <div class="owl-carousel barang-carousel ">
@@ -323,13 +357,16 @@
                         </div>
                     </div>
                 </div>
+
+                <?php } ?>
             </div>
+
             <div class="row mt-4">
-            <div class="col-xl-12">
-                <div class="box-text-display-button d-flex justify-content-center">
-                <a href="{{ route('products.highest') }}"><div class="text-display-button text-center">Lihat Semua Pilihan Tertinggi</div> </a>
+                <div class="col-xl-12">
+                    <div class="box-text-display-button d-flex justify-content-center">
+                    <a href="{{ route('products.highest') }}"><div class="text-display-button text-center">Lihat Semua Pilihan Tertinggi</div> </a>
+                    </div>
                 </div>
-            </div>
             </div>
             <!--Border-->
             <div class="row mt-4">
